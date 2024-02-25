@@ -112,9 +112,9 @@ We will attempt to calulate the eigenvalues and eigenvectors by solving the time
 
 The time-independent Schrödinger equation in 1D can be written :
 
-\begin{equation}
-H \psi = E \psi \label{eq1}\tag{1}
-\end{equation}
+$$
+H \psi = E \psi \tag{FIX!!} 
+$$
 
 Where the Hamiltonian $H$ is given by 
 
@@ -122,7 +122,7 @@ $$
 H = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{3}
 $$
 
-In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation \ref{eq1} becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
+In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
 
 In order to define the matrix $H$, we can use a discrete approximation of the 2nd derivative :
 $$
@@ -156,6 +156,14 @@ V_i(x_i) = i^2 (\Delta x)^2 = x_i^2   \tag{8}
 $$
 
 Leaving us with a simple function which takes as argument a discrete set of space points, $x_i$, and returns the potential at each point, $V_i$ which is simple the square of the displacement $x_i$.
+
+<div align="center">
+
+<img src="Images/QHOpotential.png" width=600>
+
+*Caption*
+</div>
+
 
 We construct the tri-diagonal kinetic energy term matrix $D$ as outlined above in equations 3 and 4, and then add the potential term to find the Hamiltonian matrix $H$.
 
@@ -251,6 +259,13 @@ $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{12}
 $$
 
+<div align="center">
+
+<img src="Images/output56.png" width=600>
+
+*Caption*
+</div>
+
 
 We can now use the same method as outlined in section 1 to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
 
@@ -285,7 +300,9 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 *Caption*
 </div>
 
+The energy scale describes the required energy to move the electron from its bound state to infinity, a simpler way to think of it is the sum total energy of the nucleas and the electron is this much lower (hence the negative) than if they were seperated by an infinite distance
 
+In addition to the quantized negative energy states of the hydrogen atom, there is also a continuum of unbound positive energy states. 
 
 
 ### Analytical 
