@@ -325,6 +325,27 @@ In addition to the quantized negative energy states of the hydrogen atom, there 
 
 *Caption*
 
+
+The pattern in the given fractions seems to involve decreasing magnitudes of the fractions with a negative sign. Let's analyze:
+
+-1 = -1/1
+-0.25 = -1/4
+-0.111 = -1/9
+-0.0625 = -1/16
+-0.04 = -1/25
+
+Each fraction appears to be the reciprocal of the square of an integer:
+
+1^2 = 1
+2^2 = 4
+3^2 = 9
+4^2 = 16
+5^2 = 25
+
+So, the pattern is:
+
+-1/(n^2)
+
 </div>
 
 To convert our  dimensionless results given in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ we can solve for the energy levels in terms of eV, by inputting the required constants :
