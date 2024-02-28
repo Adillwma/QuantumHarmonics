@@ -6,9 +6,11 @@
 
 <img src="Images/QuantumHarmonics_Logo2.gif" width="1000"> 
 
-    - Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods
-    - Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom
-    - Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers
+Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods.
+
+Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom.
+
+Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers.
 
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
@@ -259,13 +261,41 @@ $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{12}
 $$
 
+The potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the azimuthal quantum number $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. Let's analyze how this potential changes with respect to $l$:
+
+includes an additional term dependent on the azimuthal quantum number $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. Let's analyze how this potential changes with respect to $l$:
+
+1. **$l = 0$ (s orbital)**:
+   When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential:
+   
+   $$ 
+   V(r) = -\frac{k \cdot e^2}{r} \tag{13SORT!!} 
+   $$
+   
+   . This corresponds to the s orbital, which is spherically symmetric. The potential is solely determined by the attractive Coulomb interaction between the electron and the nucleus.
+
+2. **$l > 0$ (p, d, f orbitals, etc.)**:
+   For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum.
+
+   - For $l = 1$ (p orbitals), the term becomes $1/r^2$, providing an additional repulsive contribution to the potential.
+   - For $l = 2$ (d orbitals), the term becomes $2/r^2$, which is stronger than for $l = 1$ and contributes even more repulsion.
+   - This trend continues for higher $l$ values, with the repulsion becoming more significant as $l$ increases.
+
+Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
+
 <div align="center">
 
 <img src="Images/output56.png" width=600>
 
-*Caption*
+*Columb potential*
 </div>
 
+<div align="center">
+
+<img src="Images/outputcc.png" width=600>
+
+*Quantum Hydrogen potential, varying $l$, can see that when $l = 0$ the potential is the standard columb potential, but as $l$ increases, the centrifugal potential term increases*
+</div>
 
 We can now use the same method as outlined in section 1 to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
 
@@ -281,6 +311,28 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 #### Eigenvalues (Energy Levels)
 
 #### Eigenvectors (Wavefunctions)
+
+
+
+<div align="center">
+
+<img src="Images/l0output.png" width=600>
+
+*$l = 0$*
+</div>
+
+
+
+<div align="center">
+
+<img src="Images/l3output.png" width=600>
+
+*$l = 3$*
+</div>
+
+
+
+
 
 ### Combined Visulisation of Potential, Energy Levels and Position Probability Density for Hydrogen Atom
 
