@@ -261,9 +261,7 @@ $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{12}
 $$
 
-The potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the azimuthal quantum number $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. Let's analyze how this potential changes with respect to $l$:
-
-includes an additional term dependent on the azimuthal quantum number $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. Let's analyze how this potential changes with respect to $l$:
+These are called Rydberg atomic units, and greatly simplify our calulations. The potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the azimuthal quantum number $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. Let's analyze how this potential changes with respect to $l$:
 
 1. **$l = 0$ (s orbital)**:
    When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential:
