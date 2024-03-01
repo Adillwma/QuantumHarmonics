@@ -91,7 +91,7 @@ Plotting the first 4 analytically derived wavefunctions we get :
 
 <div align="center">
 
-<img src="Images/analytical_wavefunctions.png" width=600>
+<img src="Images/wfa.png" width=600>
 
 *Caption*
 
