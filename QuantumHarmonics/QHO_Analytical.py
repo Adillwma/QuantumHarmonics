@@ -14,7 +14,8 @@ def qho_analytical_e_values(max_n, min_n=0):
     Returns: analytical_E_vals: 1D list of analytical eigenvales for the QHO from ground state up till maxE_val
              n_vals: 1D list of index positions for the analytical eigenvales
     """    
-    n_vals = np.arange(min_n, max_n, 1)                #Initialises list to hold the index values for the analytical eignevalues
+    print(max_n)
+    n_vals = np.arange(min_n, max_n + 1, 1)                #Initialises list to hold the index values for the analytical eignevalues
     analytical_E_vals = 2 * n_vals + 1             #Calculates the analytical eigenvalues, which are given by (n*2)+1 due to the choice of units we have used for energy (1/2)*ℏ𝜔
 
     return(analytical_E_vals, n_vals)              #Returns the list of eigenvalues and the list of index values
@@ -25,7 +26,7 @@ def qho_analytical_e_vectors(x, max_n, min_n=0):
     wavefunctions = []
     probability_densitys = []
 
-    for n in range(min_n, max_n):
+    for n in range(min_n, max_n+1):
 
         if n <= 150:
             prefactor = (1 / np.sqrt(2**n * np.math.factorial(n) * np.sqrt(np.pi)))
@@ -42,7 +43,6 @@ def qho_analytical_e_vectors(x, max_n, min_n=0):
     return wavefunctions, probability_densitys
 
 def QHO_analytical_soloution(x, max_n, min_n=0):
-
     E_vals, n_vals = qho_analytical_e_values(max_n, min_n)
     wavefunctions, probability_densitys = qho_analytical_e_vectors(x, max_n, min_n)
 

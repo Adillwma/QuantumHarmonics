@@ -66,13 +66,15 @@ def QHO_simulation(x, delta_x, maxE_val, minE_val= 0):
             E_vals_tridiag: List of numerically calculated eigenvalues, 
             E_vectors_tridiag List of numerically calculated eigenvectors
     """  
-
     V_qho = potential_qho(x)                                                     #QHO potential function
     H_main, H_plusone = hamiltonian_diag(x, V_qho, delta_x)                      #Hamiltonian function
-
                                                                             #If user specifies both a minimum and maximum eigenvalue, only eigenvalues within this range are calculated
-    E_vals_tridiag, E_vectors_tridiag = eigh_tridiagonal(H_main, H_plusone, select_range=(minE_val, maxE_val))
+    E_vals_tridiag, E_vectors_tridiag = eigh_tridiagonal(H_main, H_plusone, select="i", select_range=(minE_val, maxE_val))
     E_vectors_tridiag = E_vectors_tridiag / np.sqrt(delta_x)                    #Normalising the eigenvectors
+
+
+    print("E VAL LENGTH", len(E_vals_tridiag))
+    print("E VECTORS LENGTH", len(E_vectors_tridiag))
 
     p_densitys = E_vectors_tridiag**2
 
@@ -82,9 +84,9 @@ def QHO_simulation(x, delta_x, maxE_val, minE_val= 0):
 if __name__ == "__main__":
         
     # User Settings
-    max_n = 5
+    max_n = 10
     
-    N = 1000 
+    N = 100 
     x_min = -5
     x_max = 5
 
