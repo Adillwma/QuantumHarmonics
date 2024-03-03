@@ -19,6 +19,10 @@ Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom
 
 ## Table of Contents
 - [Introduction](#Introduction)
+- [Quantum Mechanics (Brief Overview)](#Quantum-Mechanics--Brief-Overview-)
+  * [Quantisation](#Quantisation)
+  * [Understanding Atoms](#Understanding-Atoms)
+  * [Quantum Numbers](#Quantum-Numbers)
 - [Part 1 - The Quantum Harmonic Oscillator](#Part-1---The-Quantum-Harmonic-Oscillator)
   * [Analytical](#Analytical)
   * [Simulation](#Simulation)
@@ -49,7 +53,7 @@ The first sentance that usually follows any mention of quantum mechinics is to a
 This simulation and write up aims to provide a way to bring together many seemingly disparate concepts in quantum mechanics to provide a more intuitive understanding of the subject. We also approch the topic from the concept of 'quantisation' and 'potential energy' that will feel very familliar to anyone who has walked up a hill or set of stairs before. 
 
 
-# Quantum Mechanics (Brief Overview)
+## Quantum Mechanics (Brief Overview)
 but the theory is so different from our everyday experience that it is hard to understand. The theory is based on the idea that the fundemental building blocks of the universe are not particles but waves, and that these waves are not waves of anything we can imagine, they are waves of probability.
 
 ## Quantisation
@@ -435,12 +439,12 @@ In addition to the quantized negative energy states of the hydrogen atom, there 
 | n   | Analytical Result | in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | Simulation Result ($\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$) | Simulation Error ($\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$) |
 |-----|------------------|-------------------------------|-------------------|------|
 | 0   | $-1.000 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -1.0000                      | -1.0433           |-0.0433|
-| 1   | $-0.250 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | -0.2500                      | -0.2553           |-0.0053|
-| 2   | $-0.111 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | -0.1111                      | -0.1127           |-0.0017|
-| 3   | $-0.063 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | -0.0625                      | -0.0632           |-0.0007|
-| 4   | $-0.040 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | -0.0400                      | -0.0403           |-0.0003|
-| 5   | $-0.027 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | -0.0278                      | -0.0280           |-0.0002|
-| 6   | $-0.020 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | -0.0204                      | -0.0205           |-0.0001|
+| 1   | $-0.250 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.2500                      | -0.2553           |-0.0053|
+| 2   | $-0.111 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.1111                      | -0.1127           |-0.0017|
+| 3   | $-0.063 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0625                      | -0.0632           |-0.0007|
+| 4   | $-0.040 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0400                      | -0.0403           |-0.0003|
+| 5   | $-0.027 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0278                      | -0.0280           |-0.0002|
+| 6   | $-0.020 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204                      | -0.0205           |-0.0001|
 | ... | ...            | ...               | ...               |...|
 
 *Caption*
@@ -448,11 +452,15 @@ In addition to the quantized negative energy states of the hydrogen atom, there 
 
 The pattern in the given fractions seems to involve decreasing magnitudes of the fractions with a negative sign. Let's analyze:
 
--1 = -1/1
--0.25 = -1/4
--0.111 = -1/9
--0.0625 = -1/16
--0.04 = -1/25
+|result|
+|-----------|
+|$-1 = -\frac{1}{1}$ |
+|$-0.25 = -\frac{1}{4}$ |
+|$-0.111 = -\frac{1}{9}$ |
+|$-0.0625 = -\frac{1}{16}$ |
+|$-0.04 = -\frac{1}{25}$ |
+
+
 
 Each fraction appears to be the reciprocal of the square of an integer:
 
