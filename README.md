@@ -46,7 +46,7 @@ The quantum harmonic oscillator is a quantum mechanical analogue of the classica
 
 ### Analytical 
 
-#### Eigenvalues (Energy Levels)
+#### Energy Levels
 Analytically the energy levels of the quantum harmonic oscillator are given by :
 
 $$
@@ -74,15 +74,14 @@ This equation represents the **quantization** of energy levels in the quantum ha
 
 </div>
 
-#### Eigenvectors (Wavefunctions)
-The analytical **eigenvectors** $\psi_n$ of the QHO are given by the Hermite polynomials, along with a gaussian factor and a normalization constant:
+#### Wavefunctions
+The analytical **eigenvectors** $\psi_n$ of the QHO are given by,
 
 $$
 \psi_n(x) = \frac{1}{\sqrt{2^n n! \sqrt{\pi}}} e^{-\frac{x^2}{2}} H_n(x)
 $$
 
-$\frac{1}{\sqrt{2^n n! \sqrt{\pi}}}$ is the normalization constant which ensures that the wavefunction is properly normalized, i.e. $\int_{-\infty}^{\infty} |\psi_n(x)|^2 dx = 1$
-, $e^{-\frac{x^2}{2}}$ is the Gaussian term representing the ground state probability distribution, which peaks at $x=0$ and decays rapidly as $x$ moves away from zero, and $H_n(x)$ is the Hermite polynomial of degree $n$, given by,
+This equation is made up of three terms, $\frac{1}{\sqrt{2^n n! \sqrt{\pi}}}$ is the normalization constant which ensures that the wavefunction is properly normalized, i.e. $\int_{-\infty}^{\infty} |\psi_n(x)|^2 dx = 1$. Next is the Gaussian term $e^{-\frac{x^2}{2}}$ representing the ground state probability distribution, which peaks at $x=0$ and decays rapidly as $x$ moves away from zero, and finally $H_n(x)$ is the Hermite polynomial of degree $n$, given by,
 
 $$
 H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2}
@@ -103,6 +102,7 @@ Solving for the first three wavefunctions we get the following:
 *The first three analytically solved wavefucntions for the Quantumn HArmonic Oscilator. See [Appendix Section 1.3](#Appendix_QHOreferencetable) for a more comprehensive reference table.*
 
 </div>
+It is hard to get an idea of what these wavefunctions look like from the above table, but if we now plot the wavefunctions against the displacment in $x$ we get a much clearer view of what we are talking about. 
 
 Plotting the first 3 analytically derived wavefunctions we get :
 
@@ -110,7 +110,7 @@ Plotting the first 3 analytically derived wavefunctions we get :
 
 <img src="Images/wfa.png" width=600>
 
-*Caption*
+*CHANGE LEGNED TO n1,n2,n3! Caption*
 
 </div>
 
