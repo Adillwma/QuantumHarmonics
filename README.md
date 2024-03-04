@@ -75,13 +75,20 @@ This equation represents the **quantization** of energy levels in the quantum ha
 </div>
 
 #### Eigenvectors (Wavefunctions)
-The eigenvectors are given by :
+The analytical **eigenvectors** $\psi_n$ of the QHO are given by the Hermite polynomials, along with a gaussian factor and a normalization constant:
 
 $$
-\psi_n(x) = \frac{1}{\sqrt{2^n n!}} \left(\frac{m \omega}{\pi \hbar}\right)^{1/4} e^{-\frac{m \omega x^2}{2 \hbar}} H_n\left(\sqrt{\frac{m \omega}{\hbar}} x\right)  \tag{2}
+\psi_n(x) = \frac{1}{\sqrt{2^n n! \sqrt{\pi}}} e^{-\frac{x^2}{2}} H_n(x)
 $$
 
-where $H_n$ are the Hermite polynomials. 
+$\frac{1}{\sqrt{2^n n! \sqrt{\pi}}}$ is the normalization constant which ensures that the wavefunction is properly normalized, i.e. $\int_{-\infty}^{\infty} |\psi_n(x)|^2 dx = 1$
+, $e^{-\frac{x^2}{2}}$ is the Gaussian term representing the ground state probability distribution, which peaks at $x=0$ and decays rapidly as $x$ moves away from zero, and $H_n(x)$ is the Hermite polynomial of degree $n$, given by,
+
+$$
+H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2}
+$$
+
+Solving for the first three wavefunctions we get the following:
 
 
 <div align="center">
@@ -92,6 +99,8 @@ where $H_n$ are the Hermite polynomials.
 | 2 | $\frac{\sqrt{2}}{2 \sqrt[4]{\pi}}$ | $e^{- \frac{x^{2}}{2}}$ | $2 x$ | $\frac{\sqrt{2} x e^{- \frac{x^{2}}{2}}}{\sqrt[4]{\pi}}$ |
 | 3 | $\frac{\sqrt{2}}{4 \sqrt[4]{\pi}}$ | $e^{- \frac{x^{2}}{2}}$ | $4 x^{2} - 2$ | $\frac{\sqrt{2} \cdot \left(4 x^{2} - 2\right) e^{- \frac{x^{2}}{2}}}{4 \sqrt[4]{\pi}}$ |
 |...|...|...|...|...|
+
+*The first three analytically solved wavefucntions for the Quantumn HArmonic Oscilator. See [Appendix Section 1.3](#Appendix_QHOreferencetable) for a more comprehensive reference table.*
 
 </div>
 
@@ -107,7 +116,7 @@ Plotting the first 3 analytically derived wavefunctions we get :
 
 
 ### Simulation 
-We will attempt to calulate the eigenvalues and eigenvectors by solving the time independant schrodinger equation using numerical methods and compare the results to the exact analytical solutions shown above to validate our methodology.
+We will now attempt to calulate the eigenvalues and eigenvectors of the same QHO system, this time by solving the time independant schrodinger equation using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
 
 The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written :
 
