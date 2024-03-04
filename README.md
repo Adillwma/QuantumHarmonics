@@ -15,106 +15,34 @@ Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
 [![Published](https://img.shields.io/badge/Published-2024-purple.svg)]()
+
 </div>
 
 ## Table of Contents
 - [Introduction](#Introduction)
-- [Quantum Mechanics (Brief Overview)](#Quantum-Mechanics--Brief-Overview-)
-  * [Quantisation](#Quantisation)
-  * [Understanding Atoms](#Understanding-Atoms)
-  * [Quantum Numbers](#Quantum-Numbers)
 - [Part 1 - The Quantum Harmonic Oscillator](#Part-1---The-Quantum-Harmonic-Oscillator)
   * [Analytical](#Analytical)
   * [Simulation](#Simulation)
-  * [Combined Visulisation of Potential, Energy Levels and Position Probability Density for QHO](#Combined-Visulisation-of-Potential--Energy-Levels-and-Position-Probability-Density-for-QHO)
+  * [Combined Visulisation](#Combined-Visulisation-of-Potential--Energy-Levels-and-Position-Probability-Density-for-QHO)
 - [Part 2 - The Hydrogen Atom](#Part-2---The-Hydrogen-Atom)
     * [Simulation](#Simulation-1)
-    * [Combined Visulisation of Potential, Energy Levels and Position Probability Density for Hydrogen Atom](#Combined-Visulisation-of-Potential--Energy-Levels-and-Position-Probability-Density-for-Hydrogen-Atom)
+    * [Combined Visulisation](#Combined-Visulisation-of-Potential--Energy-Levels-and-Position-Probability-Density-for-Hydrogen-Atom)
     * [Analytical](#Analytical-1)
 - [Appendix](#Appendix)
-    * [Quantum Numbers](#Quantum-Numbers)
-        + [Spin Quantum Number (s)](#Spin-Quantum-Number--s-)
-        + [Azimuthal Quantum Number (l)](#Azimuthal-Quantum-Number--l-)
-        + [Magnetic Quantum Number (m)](#Magnetic-Quantum-Number--m-)
     * [Stability](#Stability)
+    * [Performance](#Performance)
 - [References](#References)
 - [License](#License)
 - [Contributions](#Contributions)
 - [Contact](#Contact)
 - [Acknowledgements](#Acknowledgements)
 
+## Introduction
+Our current understanding of the most fundemental aspects of our universe come from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behavior of quantum systems. A form of this equation known as the 'time-independant schrodinger equation' or TISE, providing insights into the quantized energy levels and spatial distributions of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically, in order to simulate various quantum systems, and visulise the results.
 
-# Introduction
-
-Most of us will have vague memories of physics classes in school, during which we were taught about how objects move based on the forces that are acting upon them. This branch of physics, essentially the study of how things move and why they are where they are, is known as 'Mechanics'. Issiac Newton's laws of motion are the foundation of mechanics and for this reason it is often refered to as 'Newtonian Mechanics'. Though genrally the are is now refered to as 'classical Mechanics' as it has been superseeded by a more accurate and fundamental theory of the universe and the subject of this simulation and discussion, Quantum Mechanics. 
-
-The first sentance that usually follows any mention of quantum mechinics is to add that noone not event the people working with it daily understand it. This is not true, but does make for more exciting media coverage and is appreciated both by the media outlets and the scientists doing quantum wheelies. The theory is well understood and has been tested to an incredible degree of accuracy, furthermore many aspects of quantum mechincs are actually incredibly intuitive, easy to understand and downright beautiful. The reason for the rep as being to complicated to understand comes from certain areas of the theory where we are able to use the mathmatical formulisms to generate correct predictions about the real world however our verbal and mental explination for the physical significance of the actual mechnisms behind what is happening are still in dispute. This is not unique to quantum mechinics, a good example is gravity, we are able to use our current mathmatical forulisms for gravitation to calulate answers to a high degree of accuracy, however we do not have a complete understanding of the physical significance of the mechnisms behind it, Einstien brought our understanding to a new level with his theory of general relativity showing the effetc of gravity are due to a curvature of space-time rather than a force acting at a distance, yet we are still unable to provide a explination of the pysical mechainisms give rise to the curvature, or even what it actully means for space-time to curve. It is a fair point to raise to say that our current thedry of gravity is already known to be incomplete as it is a classical theory of gravity and we are yet to be able to incorperate gravity into our current quantum frameworks (this persuit is often known as the search for the theory of everything, as quantum field theory doosent currently describes every single fundemental particle and fundemental foce of nature other than gravity) however the point still stands that we are able to use the mathmatical forulisms to make correct predictions about the world, whilst not being able to explain the physical mechanism in a way that is intuitive to us and we do not hear people denouncing gravity as beyond our conception everytime it is mentioned.
-
-This simulation and write up aims to provide a way to bring together many seemingly disparate concepts in quantum mechanics to provide a more intuitive understanding of the subject. We also approch the topic from the concept of 'quantisation' and 'potential energy' that will feel very familliar to anyone who has walked up a hill or set of stairs before. 
-
-
-## Quantum Mechanics (Brief Overview)
-but the theory is so different from our everyday experience that it is hard to understand. The theory is based on the idea that the fundemental building blocks of the universe are not particles but waves, and that these waves are not waves of anything we can imagine, they are waves of probability.
-
-## Quantisation
-One of the main ideas of quantum meachnics that sets it apart from classical mechincs and contributes to he name of the field is the idea of **quantisation**. In classical mechanics we are used to the idea that reality is continuos, meaning you may be here, there, somwherein between the tow places, you might have a speed of 5m/s or 5.5m/s or 5.55 m/s we are used to the idea that there are indfinitely more smaller divisions of everything. In quantum mechanics however, we find that certian properties of the universe are quantised, meaning they can only take on certian values, and these values are not continous, they are discrete. This is actually incredibly intuitive idea, especially to any programmers out there, who are used to having to work in discrete values even if you wish you didnt have to. 
-
-This si quite a simple concept, on the one hand you coul dimaging a hill with a perfectly flat and sloped side being the continuous universe, wehre you can take any height position on thew hill, and then you could imagine beside it a set of steps, where you can only take on certian heights, and you can only move up or down in steps. This is the idea of quantisation, and it is a fundemental aspect of quantum mechanics. It actually greatly simplifies reality as there is no longer infginte space between any two points, and it explains the lack of diversity in the universe, as there are only certian 
-values that are allowed and so we will conformity in the fundemantal building blocks across the universe compared to one with continuos properties. 
-
-
-## Understanding Atoms
-ytou may say okay that is simple but what was the need for us to switch to this when we already had a perfectly nice continuos world view, cant we just stick to that. The answer is that the development of quantum mechnics was down to reality tellin gus that our previous ideas were wrong. One of the first indication that the universe was not as we thought came from the study of atoms. We had a pretty good idea of what they were made of, a nucleas in the centre made of protons and neutrons, and then electrons orbiting the nucleas. The problem was that the electrons were not behaving as we expected them to.
-
-
-## Quantum Numbers
-
-
-## Fundemental Properties
-One aspect of quantum mechanics that can be foriegn to people is the idea that certian properties that we think of as being intrinsic to an object, such as its position are not fundemental at all. A way to analogise this that immidetly makes sense is to imagine you are playing a computer game, you walk into a room in the game and there is an object in the room. The people who created the game may have defined in the games code that this item is to appear in this fixed position in the room, we would say that the object has a position that is fundemental. This is how classical mechanics functions, in that in classical mechanics we assume that objects intrisicly have a fundemental position, and then we just observe what that fundentmal position is. Quantum mechanics however is quite different from this natural assumption. In quatum mechanics certian properties that we think of as being intrinsic to an object, such as position are not fundemental at all. In the example of our game, instead of the code specifying the posiiton of the object, the code specifies a probability distribution of the position of the object, meaning the code specifies a range of possible locations and a probability of the object being in each of these locations, maybe a 10% chance of being in room A and 90% in room b, then when we play the game and load into the mission the ojects position will be randomly selected based ont heprabbailities and fixed in one of these locations. In this case the reality of the object is that it does not have a **fundemental** position, rather **it** has a probability distribution of positions and then when we load the game it takes a fixed position. The underlying reality of position is statistical not the other way round. Everything so far has been pretty simple, but we cannot avoid the question, in real life when do objects go from thier probability thingy to actually being in a position? This is a shame as it is almost the first question anyone would ask and is the exact part of quatum mechanics that is currently hotly debated, we do not have a way to describe the physical significance and mechanism for this process, leading to many curious people getting bogged down right from the start. In our game analogy the object becomes fixed in a place when the game level loads, in reality qauntum objects take a fixed position when they are measured, which is known as the 'collapse' of the wavefunction. Luckily this question, whilst incredible interesting, is not neccesary to understand any of the rest of quantum mechanics and for those interested is already widely covered. We shall skirt round when and how things go from probabilities to 'localised' in this write up, and focus on the more intuitive aspects of quantum mechanics. 
-
-You may be thinking well that is interesting but what does it matter if in the code the item is defined as a fixed position or a probability distribution, as once I'm in the game it take on a fixed position either way, and the probility code is then meaningless! This is a fair point and where my analogy falls down, as in our game example the interactions the object is a part of are calulated based on the expression of its position at that time. In reality, interactions of quantum mechanical systems and objects happen based on the fundemental properties not the macroscopic expressions, and the fundemental properties do not include position, rather the wavefunction. 
-
-
-
-
-
-
-
-
-
-## Simulting Some Quantum Phenomena
-The feild of quantum mechanics has revolutionized our understanding of the microscopic world. Central to this framework is the Schrödinger equation, a cornerstone equation in quantum mechanics that governs the behavior of quantum systems. the time independant shcrodinger equation describes the wavefunctions and energy levels of a quantum system. 
-
-Eigenvalues represent the possible energy states of a quantum system, providing insights into the quantized nature of energy levels. These energy levels dictate the behavior and stability of the system, serving as a fundamental aspect of its characterization. Concurrently, eigenvectors correspond to the spatial distribution probability density of particles within the system. Understanding these eigenvectors enables us to comprehend the probability of finding a particle at a particular position within the system, thereby elucidating its spatial characteristics.
-
-The utilization of numerical methods in solving the Schrödinger equation is paramount due to the inherent complexity of quantum systems. Analytical solutions are often infeasible for intricate systems, necessitating numerical techniques for accurate computations. Through numerical methods, we can approximate the eigenvalues and eigenvectors, consequently deducing the energy levels and spatial distributions of particles within the quantum system.
-
-Thus, by employing numerical methods to solve the 1D Schrödinger equation, we embark on a quest to unravel the mysteries of quantum systems, particularly focusing on understanding the energy levels and spatial distributions of particles within these systems. This endeavor not only deepens our comprehension of quantum mechanics but also unveils the intricate workings of nature at its most fundamental level.
 
 ## Part 1 - The Quantum Harmonic Oscillator 
-
-#### Simple Harmonic Oscillaror
-The simple harmonic oscillator is a fundamental concept in classical mechanics, representing a classical system that oscillates about an equilibrium position, (think of a pendulum as it ticks back and forth.) If you take a pendulum thta is not movingf and is steady at equilibrum and pull it to one side and let go, it will swing back and forth, the further you pull it, the higher it will swing when it goes to the other side, that is becasue the higer you raise the pendulum the more **potential energy** you provide it, which is released when you let go. The potential energy of the harmonic oscillator is given by a quadratic function, resulting in a restoring force that is proportional to the displacement from the equilibrium position. This sounds incredibly basic but this simple system is a cornerstone of classical mechanics, serving as a fundamental model for various physical systems i.e springs, etc.
-
-#### Quantum Harmonic Oscillator
-The quantum harmonic oscillator is a quantum mechanical analogue of the classical harmonic oscillator outlined, representing a quantum system that oscillates about an equilibrium position. this could be a particle in a potential well, or a vibrating diatomic molecule. The quantum harmonic oscillator is a good example situation to use to start building our simulation, since it is an easy concept to understand and has exact analytic solutions we can use to validate our simulations results. 
-
-Now we may ask ourselves, for a particle in a potential well, what are the possible states it can be in? What fundemental properties make up a complete description of its state? Well we can totally sum up the complete state of the particle of we know its potential enegry, as we have discussed the potential energy is directly related to the displacement, i.e the potentrial energy tells us the position of the particle. We also need to know the kinetic energy of the particle, as the kinetic energy is related to the velocity of the particle, and the velocity is related to the momentum of the particle. So if we know the potential energy and the kinetic energy of the particle we know everything about the particle. This is the fundemental idea behind the time independant schrodinger equation, it is a way to find the potential and kinetic energy of a quantum particle in a potential well, and then we know everything about the particle.
-
-
-
-
-
-
-The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written :
-
-
-
-
-The quantum harmonic oscillator is a good example to start with, since it has exact analytic solutions. 
-
-
+The quantum harmonic oscillator is a quantum mechanical analogue of the classical harmonic oscillator, representing a quantum system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The quantum harmonic oscillator is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
 ### Analytical 
 
@@ -153,7 +81,19 @@ $$
 
 where $H_n$ are the Hermite polynomials. 
 
-Plotting the first 4 analytically derived wavefunctions we get :
+
+<div align="center">
+
+| Term | Normalisation Prefactor | Hermite Polynomial | Gaussian | Wavefunction Expression |
+|------|------------|---------|--------|---------|
+| 1 | $ \frac{1}{\sqrt[4]{\pi}} $ | $ 1 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{e^{- \frac{x^{2}}{2}}}{\sqrt[4]{\pi}} $ |
+| 2 | $ \frac{\sqrt{2}}{2 \sqrt[4]{\pi}} $ | $ 2 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{2} x e^{- \frac{x^{2}}{2}}}{\sqrt[4]{\pi}} $ |
+| 3 | $ \frac{\sqrt{2}}{4 \sqrt[4]{\pi}} $ | $ 4 x^{2} - 2 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{2} \cdot \left(4 x^{2} - 2\right) e^{- \frac{x^{2}}{2}}}{4 \sqrt[4]{\pi}} $ |
+|...|...|...|...|...|
+
+</div>
+
+Plotting the first 3 analytically derived wavefunctions we get :
 
 <div align="center">
 
@@ -164,23 +104,10 @@ Plotting the first 4 analytically derived wavefunctions we get :
 </div>
 
 
-
-
-
-
-We can use the above to test our numerical method.  We will choose a value for $\omega$ and a range of $x$ values, and use the above to construct the Hamiltonian matrix $H$.  We can then use a linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the analytical solutions.
-
-
-???????????????We will use the scipy.linalg.eigh_tridiagonal function to solve the eigenvalue problem, which is a wrapper for the LAPACK functions for solving the eigenvalue problem for a symmetric tridiagonal matrix. We will use the scipy.special.hermite function to calculate the Hermite polynomials.
-???????????
-
 ### Simulation 
+We will attempt to calulate the eigenvalues and eigenvectors by solving the time independant schrodinger equation using numerical methods and compare the results to the exact analytical solutions shown above to validate our methodology.
 
-We will attempt to calulate the eigenvalues and eigenvectors by solving the time independant schrodinger equation using numerical methods and compare the results to the exact analytical solutions shown above. 
-
-## Part 1
-
-The quantum harmonic oscillator is a good example to start with, since it has exact analytic solutions for validation. The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written :
+The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written :
 
 $$
 \hat{H} \psi = \hat{E} \psi \tag{FIX!!} 
@@ -193,10 +120,9 @@ $$
 $$
 
 Where:
-- $\hat{H}$ is the Hamiltonian operator.
 - $\hbar$ is the reduced Planck constant.
 - $m$ is the mass of the oscillator.
-- $V$ is the potential energy function.
+- $V$ is the potential energy.
 
 For the quantum harmonic oscillator, the potential is :
 
@@ -213,8 +139,6 @@ where $\omega$ is the angular frequency of the oscillator.
 
 *Caption*
 </div>
-
-
 
 In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
 
@@ -243,18 +167,17 @@ $$
 
 The potential term can be represented by a matrix where the leading diagonal is the potential evaluated at the $i$-th point in space, $V_{i,i} = V(x_i)$, and all other entries are zero. 
 
-Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectivly.
+Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectivly. For performance reasons we will use the scipy.linalg.eigh_tridiagonal function to solve for the eigenvalues and eigenvectors of $H$, as it allows us to take advantage of the fact that we are working with diagonal and tridaigonal matricies. This is dicussed further in [Appendix Section 2.2](#Appendix_performance).
 
 ##### NOTE:
-It is important to use a large number of $x$ points, at least 1000, covering sufficient range that the wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
+It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additonally the x displacement (from which follows the range for the potential) must covering sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
 #### Eigenvalues (Energy Levels)
 
 We compare the computed eigenvalues with the expected eigenvalues.
 
-Looking back on our table of analytical values for the energy levels, and filling in our simulated values we can see we get a good match at low n but the error increases as n increases
-
+Looking back on our table of analytical values for the energy levels, and filling in our simulated values we can see we get a good match between the two, with the error gradlly increasing as the energy level increases. This is to be expected as the wavefunctions become more complex and the numerical solutions become less stable. 
 
 <div align="center">
 
@@ -273,7 +196,7 @@ Looking back on our table of analytical values for the energy levels, and fillin
 
 </div>
 
-To get a better idea of the error we can plot the error as a function of n, the results show good agreement between simulation and anylitical results for low n up to around 10, after which the error increases rapidly. 
+To get a better idea of the error we can plot it as a function of n, the results show good agreement between simulation and anylitical results, a full exploration of the error as a function of the input parameters is given in [Appendix Section 2.1](#Appendix_stability). 
 
 <div align="center">
 
@@ -618,6 +541,43 @@ The previous visuals were all based on the radial wavefunction which each have a
 
 ## Appendix
 
+
+# Introduction
+
+Most of us will have vague memories of physics classes in school, during which we were taught about how objects move based on the forces that are acting upon them. This branch of physics, essentially the study of how things move and why they are where they are, is known as 'Mechanics'. Issiac Newton's laws of motion are the foundation of mechanics and for this reason it is often refered to as 'Newtonian Mechanics'. Though genrally the are is now refered to as 'classical Mechanics' as it has been superseeded by a more accurate and fundamental theory of the universe and the subject of this simulation and discussion, Quantum Mechanics. 
+
+The first sentance that usually follows any mention of quantum mechinics is to add that noone not event the people working with it daily understand it. This is not true, but does make for more exciting media coverage and is appreciated both by the media outlets and the scientists doing quantum wheelies. The theory is well understood and has been tested to an incredible degree of accuracy, furthermore many aspects of quantum mechincs are actually incredibly intuitive, easy to understand and downright beautiful. The reason for the rep as being to complicated to understand comes from certain areas of the theory where we are able to use the mathmatical formulisms to generate correct predictions about the real world however our verbal and mental explination for the physical significance of the actual mechnisms behind what is happening are still in dispute. This is not unique to quantum mechinics, a good example is gravity, we are able to use our current mathmatical forulisms for gravitation to calulate answers to a high degree of accuracy, however we do not have a complete understanding of the physical significance of the mechnisms behind it, Einstien brought our understanding to a new level with his theory of general relativity showing the effetc of gravity are due to a curvature of space-time rather than a force acting at a distance, yet we are still unable to provide a explination of the pysical mechainisms give rise to the curvature, or even what it actully means for space-time to curve. It is a fair point to raise to say that our current thedry of gravity is already known to be incomplete as it is a classical theory of gravity and we are yet to be able to incorperate gravity into our current quantum frameworks (this persuit is often known as the search for the theory of everything, as quantum field theory doosent currently describes every single fundemental particle and fundemental foce of nature other than gravity) however the point still stands that we are able to use the mathmatical forulisms to make correct predictions about the world, whilst not being able to explain the physical mechanism in a way that is intuitive to us and we do not hear people denouncing gravity as beyond our conception everytime it is mentioned.
+
+This simulation and write up aims to provide a way to bring together many seemingly disparate concepts in quantum mechanics to provide a more intuitive understanding of the subject. We also approch the topic from the concept of 'quantisation' and 'potential energy' that will feel very familliar to anyone who has walked up a hill or set of stairs before. 
+
+
+## Quantum Mechanics (Brief Overview)
+but the theory is so different from our everyday experience that it is hard to understand. The theory is based on the idea that the fundemental building blocks of the universe are not particles but waves, and that these waves are not waves of anything we can imagine, they are waves of probability.
+
+## Quantisation
+One of the main ideas of quantum meachnics that sets it apart from classical mechincs and contributes to he name of the field is the idea of **quantisation**. In classical mechanics we are used to the idea that reality is continuos, meaning you may be here, there, somwherein between the tow places, you might have a speed of 5m/s or 5.5m/s or 5.55 m/s we are used to the idea that there are indfinitely more smaller divisions of everything. In quantum mechanics however, we find that certian properties of the universe are quantised, meaning they can only take on certian values, and these values are not continous, they are discrete. This is actually incredibly intuitive idea, especially to any programmers out there, who are used to having to work in discrete values even if you wish you didnt have to. 
+
+This si quite a simple concept, on the one hand you coul dimaging a hill with a perfectly flat and sloped side being the continuous universe, wehre you can take any height position on thew hill, and then you could imagine beside it a set of steps, where you can only take on certian heights, and you can only move up or down in steps. This is the idea of quantisation, and it is a fundemental aspect of quantum mechanics. It actually greatly simplifies reality as there is no longer infginte space between any two points, and it explains the lack of diversity in the universe, as there are only certian 
+values that are allowed and so we will conformity in the fundemantal building blocks across the universe compared to one with continuos properties. 
+
+
+## Understanding Atoms
+ytou may say okay that is simple but what was the need for us to switch to this when we already had a perfectly nice continuos world view, cant we just stick to that. The answer is that the development of quantum mechnics was down to reality tellin gus that our previous ideas were wrong. One of the first indication that the universe was not as we thought came from the study of atoms. We had a pretty good idea of what they were made of, a nucleas in the centre made of protons and neutrons, and then electrons orbiting the nucleas. The problem was that the electrons were not behaving as we expected them to.
+
+
+## Quantum Numbers
+
+
+## Fundemental Properties
+One aspect of quantum mechanics that can be foriegn to people is the idea that certian properties that we think of as being intrinsic to an object, such as its position are not fundemental at all. A way to analogise this that immidetly makes sense is to imagine you are playing a computer game, you walk into a room in the game and there is an object in the room. The people who created the game may have defined in the games code that this item is to appear in this fixed position in the room, we would say that the object has a position that is fundemental. This is how classical mechanics functions, in that in classical mechanics we assume that objects intrisicly have a fundemental position, and then we just observe what that fundentmal position is. Quantum mechanics however is quite different from this natural assumption. In quatum mechanics certian properties that we think of as being intrinsic to an object, such as position are not fundemental at all. In the example of our game, instead of the code specifying the posiiton of the object, the code specifies a probability distribution of the position of the object, meaning the code specifies a range of possible locations and a probability of the object being in each of these locations, maybe a 10% chance of being in room A and 90% in room b, then when we play the game and load into the mission the ojects position will be randomly selected based ont heprabbailities and fixed in one of these locations. In this case the reality of the object is that it does not have a **fundemental** position, rather **it** has a probability distribution of positions and then when we load the game it takes a fixed position. The underlying reality of position is statistical not the other way round. Everything so far has been pretty simple, but we cannot avoid the question, in real life when do objects go from thier probability thingy to actually being in a position? This is a shame as it is almost the first question anyone would ask and is the exact part of quatum mechanics that is currently hotly debated, we do not have a way to describe the physical significance and mechanism for this process, leading to many curious people getting bogged down right from the start. In our game analogy the object becomes fixed in a place when the game level loads, in reality qauntum objects take a fixed position when they are measured, which is known as the 'collapse' of the wavefunction. Luckily this question, whilst incredible interesting, is not neccesary to understand any of the rest of quantum mechanics and for those interested is already widely covered. We shall skirt round when and how things go from probabilities to 'localised' in this write up, and focus on the more intuitive aspects of quantum mechanics. 
+
+You may be thinking well that is interesting but what does it matter if in the code the item is defined as a fixed position or a probability distribution, as once I'm in the game it take on a fixed position either way, and the probility code is then meaningless! This is a fair point and where my analogy falls down, as in our game example the interactions the object is a part of are calulated based on the expression of its position at that time. In reality, interactions of quantum mechanical systems and objects happen based on the fundemental properties not the macroscopic expressions, and the fundemental properties do not include position, rather the wavefunction. 
+
+
+
+
+
+
 ### Quantum Numbers
 
 Quantum numbers are numbers that specify the state of a quantum system. If you know all of the quantum numbers for a system that is a complete description of state. A way to analogise this is to think of a chess board. To have a full definition of the state of the chess game i.e. all the information required to exactly recreate the game, you could write down the information of whatis present in each qaure of the board. However, this fixes the information to the spacial domain, wheras in reality properties are tied to objects not the space they inhabit. Additonally stroign information for every square (spatial position) requires more information storage as data is kept on empty squares.For an object focused definiton of state in the smallest amount of information possible, you would need to know the piece type, color (white/black) and the board position for each piece on the board. The amount of information required to define the state of the chess game is 3 values per piece present on the board, we could give these three bits of information quantum numbers a b and c for chess pieces. 
@@ -714,3 +674,45 @@ Contributions to this codebase are welcome! If you encounter any issues, bugs or
 Prof. Sandu Popescu, FRS for many inspiring and enlightening lectures. 
 
 ## References
+
+## Appendix
+
+
+### Stability
+
+
+
+### Performance
+
+
+
+
+### QHO Analytical Wavefunction Reference Table:
+
+<div align="center">
+
+
+| Term | Normalisation Prefactor | Hermite Polynomial | Gaussian | Wavefunction Expression |
+|------|------------|---------|--------|---------|
+| 1 | $ \frac{1}{\sqrt[4]{\pi}} $ | $ 1 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{e^{- \frac{x^{2}}{2}}}{\sqrt[4]{\pi}} $ |
+| 2 | $ \frac{\sqrt{2}}{2 \sqrt[4]{\pi}} $ | $ 2 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{2} x e^{- \frac{x^{2}}{2}}}{\sqrt[4]{\pi}} $ |
+| 3 | $ \frac{\sqrt{2}}{4 \sqrt[4]{\pi}} $ | $ 4 x^{2} - 2 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{2} \cdot \left(4 x^{2} - 2\right) e^{- \frac{x^{2}}{2}}}{4 \sqrt[4]{\pi}} $ |
+| 4 | $ \frac{\sqrt{3}}{12 \sqrt[4]{\pi}} $ | $ 8 x^{3} - 12 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{3} \cdot \left(8 x^{3} - 12 x\right) e^{- \frac{x^{2}}{2}}}{12 \sqrt[4]{\pi}} $ |
+| 5 | $ \frac{\sqrt{6}}{48 \sqrt[4]{\pi}} $ | $ 16 x^{4} - 48 x^{2} + 12 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{6} \cdot \left(16 x^{4} - 48 x^{2} + 12\right) e^{- \frac{x^{2}}{2}}}{48 \sqrt[4]{\pi}} $ |
+| 6 | $ \frac{\sqrt{15}}{240 \sqrt[4]{\pi}} $ | $ 32 x^{5} - 160 x^{3} + 120 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{15} \cdot \left(32 x^{5} - 160 x^{3} + 120 x\right) e^{- \frac{x^{2}}{2}}}{240 \sqrt[4]{\pi}} $ |
+| 7 | $ \frac{\sqrt{5}}{480 \sqrt[4]{\pi}} $ | $ 64 x^{6} - 480 x^{4} + 720 x^{2} - 120 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{5} \cdot \left(64 x^{6} - 480 x^{4} + 720 x^{2} - 120\right) e^{- \frac{x^{2}}{2}}}{480 \sqrt[4]{\pi}} $ |
+| 8 | $ \frac{\sqrt{70}}{6720 \sqrt[4]{\pi}} $ | $ 128 x^{7} - 1344 x^{5} + 3360 x^{3} - 1680 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{70} \cdot \left(128 x^{7} - 1344 x^{5} + 3360 x^{3} - 1680 x\right) e^{- \frac{x^{2}}{2}}}{6720 \sqrt[4]{\pi}} $ |
+| 9 | $ \frac{\sqrt{70}}{26880 \sqrt[4]{\pi}} $ | $ 256 x^{8} - 3584 x^{6} + 13440 x^{4} - 13440 x^{2} + 1680 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{70} \cdot \left(256 x^{8} - 3584 x^{6} + 13440 x^{4} - 13440 x^{2} + 1680\right) e^{- \frac{x^{2}}{2}}}{26880 \sqrt[4]{\pi}} $ |
+| 10 | $ \frac{\sqrt{35}}{80640 \sqrt[4]{\pi}} $ | $ 512 x^{9} - 9216 x^{7} + 48384 x^{5} - 80640 x^{3} + 30240 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{35} \cdot \left(512 x^{9} - 9216 x^{7} + 48384 x^{5} - 80640 x^{3} + 30240 x\right) e^{- \frac{x^{2}}{2}}}{80640 \sqrt[4]{\pi}} $ |
+| 11 | $ \frac{\sqrt{7}}{161280 \sqrt[4]{\pi}} $ | $ 1024 x^{10} - 23040 x^{8} + 161280 x^{6} - 403200 x^{4} + 302400 x^{2} - 30240 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{7} \cdot \left(1024 x^{10} - 23040 x^{8} + 161280 x^{6} - 403200 x^{4} + 302400 x^{2} - 30240\right) e^{- \frac{x^{2}}{2}}}{161280 \sqrt[4]{\pi}} $ |
+| 12 | $ \frac{\sqrt{154}}{3548160 \sqrt[4]{\pi}} $ | $ 2048 x^{11} - 56320 x^{9} + 506880 x^{7} - 1774080 x^{5} + 2217600 x^{3} - 665280 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{154} \cdot \left(2048 x^{11} - 56320 x^{9} + 506880 x^{7} - 1774080 x^{5} + 2217600 x^{3} - 665280 x\right) e^{- \frac{x^{2}}{2}}}{3548160 \sqrt[4]{\pi}} $ |
+| 13 | $ \frac{\sqrt{231}}{21288960 \sqrt[4]{\pi}} $ | $ 4096 x^{12} - 135168 x^{10} + 1520640 x^{8} - 7096320 x^{6} + 13305600 x^{4} - 7983360 x^{2} + 665280 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{231} \cdot \left(4096 x^{12} - 135168 x^{10} + 1520640 x^{8} - 7096320 x^{6} + 13305600 x^{4} - 7983360 x^{2} + 665280\right) e^{- \frac{x^{2}}{2}}}{21288960 \sqrt[4]{\pi}} $ |
+| 14 | $ \frac{\sqrt{6006}}{553512960 \sqrt[4]{\pi}} $ | $ 8192 x^{13} - 319488 x^{11} + 4392960 x^{9} - 26357760 x^{7} + 69189120 x^{5} - 69189120 x^{3} + 17297280 x $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{6006} \cdot \left(8192 x^{13} - 319488 x^{11} + 4392960 x^{9} - 26357760 x^{7} + 69189120 x^{5} - 69189120 x^{3} + 17297280 x\right) e^{- \frac{x^{2}}{2}}}{553512960 \sqrt[4]{\pi}} $ |
+| 15 | $ \frac{\sqrt{858}}{1107025920 \sqrt[4]{\pi}} $ | $ 16384 x^{14} - 745472 x^{12} + 12300288 x^{10} - 92252160 x^{8} + 322882560 x^{6} - 484323840 x^{4} + 242161920 x^{2} - 17297280 $ | $ e^{- \frac{x^{2}}{2}} $ | $ \frac{\sqrt{858} \cdot \left(16384 x^{14} - 745472 x^{12} + 12300288 x^{10} - 92252160 x^{8} + 322882560 x^{6} - 484323840 x^{4} + 242161920 x^{2} - 17297280\right) e^{- \frac{x^{2}}{2}}}{1107025920 \sqrt[4]{\pi}} $ |
+|...|...|...|...|...|
+
+</div>
+
+
+
+

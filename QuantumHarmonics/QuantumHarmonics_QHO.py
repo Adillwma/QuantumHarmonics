@@ -1,22 +1,7 @@
 ### - Loading Dependencies
 import numpy as np
-import sympy as sp
-import matplotlib.pyplot as plt
-from matplotlib import cm                     #Used to set colour gradient on 3D harmonics plot
-
-from scipy.linalg import eig                  # Used to solve for eigenvalue and eigenvectors (Compared various routines)
 from scipy.linalg import eigh_tridiagonal     # Used to solve for eigenvalue and eigenvectors (Compared various routines)
-
-from scipy import interpolate                 # Used to interpolate 1D results into function used for 2D plot
-from scipy.signal import argrelmax            # Used to find radial local maximas from 1D plot for 3D shells plot
-from scipy.special import sph_harm            # Used to generate spherical harmonics in the 3D harmonics plot
-
-from helper_functions import SimplePlotAssist, find_local_maxima, bohr_radius_to_angstrom, generate_x
-
-
-### - QHO Functions
-
-
+from helper_functions import generate_x
 
 # Potential Energy Function for Quantum Harmonic Oscillator
 def potential_qho(x):

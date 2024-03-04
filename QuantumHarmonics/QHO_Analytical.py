@@ -1,7 +1,7 @@
 
 import numpy as np
 from mpmath import factorial
-from helper_functions import SimplePlotAssist, find_local_maxima, bohr_radius_to_angstrom, generate_x
+from helper_functions import generate_x
 
 
 
@@ -47,10 +47,6 @@ def QHO_analytical_soloution(x, max_n, min_n=0):
     wavefunctions, probability_densitys = qho_analytical_e_vectors(x, max_n, min_n)
 
     return n_vals, E_vals, wavefunctions, probability_densitys
-
-
-
-
 
 
 if __name__ == "__main__":
