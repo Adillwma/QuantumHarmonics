@@ -37,7 +37,7 @@ def hamiltonian_diag(x, V, delta_x):
     return(H_main, H_plusone)                                     #Returns the Hamiltonian 1D leading diagonal and the Hamiltonian 1D offset diagonal
 
 ### - Function for QHO - (Now with the testing done clean function for the whole QHO calculation without all the testing loops and analytical checking etc, and only using the prefered scipy solver, eigh.tridiag)
-def QHO_simulation(x, delta_x, maxE_val, minE_val= 0):
+def QHO_simulation(x, delta_x, maxE_val, minE_val= 1):
     """
     Input: 
             N: Int value for number of points to divide the spatial range into, 
@@ -54,13 +54,8 @@ def QHO_simulation(x, delta_x, maxE_val, minE_val= 0):
     V_qho = potential_qho(x)                                                     #QHO potential function
     H_main, H_plusone = hamiltonian_diag(x, V_qho, delta_x)                      #Hamiltonian function
                                                                             #If user specifies both a minimum and maximum eigenvalue, only eigenvalues within this range are calculated
-    E_vals_tridiag, E_vectors_tridiag = eigh_tridiagonal(H_main, H_plusone, select="i", select_range=(minE_val, maxE_val))
+    E_vals_tridiag, E_vectors_tridiag = eigh_tridiagonal(H_main, H_plusone, select="i", select_range=(minE_val-1, maxE_val-1))
     E_vectors_tridiag = E_vectors_tridiag / np.sqrt(delta_x)                    #Normalising the eigenvectors
-
-
-    print("E VAL LENGTH", len(E_vals_tridiag))
-    print("E VECTORS LENGTH", len(E_vectors_tridiag))
-
     p_densitys = E_vectors_tridiag**2
 
     return V_qho, E_vals_tridiag, E_vectors_tridiag, p_densitys              #Returns all calulated values and steps for further processing or visulisation
