@@ -2,13 +2,9 @@
 
 # QuantumHarmonics
 ### Author: Adill Al-Ashgar
-#### Simulate Quantum Harmonic Wavefunctions to Visulise Quantum Number Effect on Electron Density Clouds
+#### Solving the Time-Independant Schrödinger Equation numerically to find the stationary wavefunctions and allowed energy states of a quantum system. 
 
 <img src="Images/QuantumHarmonics_Logo2.gif" width="1000"> 
-
-            - Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods.
-            - Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom.
-            - Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers.
 
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
@@ -18,27 +14,22 @@
 
 # Table of Contents
 - [Introduction](#Introduction)
-
 - [Part 1 - The Quantum Harmonic Oscillator](#Part-1---The-Quantum-Harmonic-Oscillator)
   - [Analytical Solution](#Analytical-Solution)
   - [Simulation](#Simulation)
   - [Combined Visulisation for QHO](#Combined-Visulisation-for-QHO)
-
 - [Part 2 - The Hydrogen Atom](#Part-2---The-Hydrogen-Atom)
   - [Simulation](#Simulation-1)
   - [Analytical Solution](#Analytical-Solution-1)
   - [Combined Visulisation for Hydrogen Atom](#Combined-Visulisation-for-Hydrogen-Atom)
-
 - [Part 3 - The Hydrogen Atom with $l \neq 0$](#Part-3---The-Hydrogen-Atom-with-$l-\neq-0$)
   - [Simulation](#Simulation-2)
   - [Combined Visulisations](#Combined-Visulisation-for-Hydrogen-Atom-at-$l-\neq-0$)
-
 - [References](#References)
 - [Appendix](#Appendix)
   - [Stability](#Stability)
   - [Performance](#Performance)
   - [QHO Analytical Wavefunction Reference Table](#QHO-Analytical-Wavefunction-Reference-Table)
-
 - [Liscence](#Liscence)
 - [Contributing](#Contributing)
 - [Contact](#Contact)
