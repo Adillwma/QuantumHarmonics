@@ -6,11 +6,9 @@
 
 <img src="Images/QuantumHarmonics_Logo2.gif" width="1000"> 
 
-  Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods.
-
-  Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom.
-
-  Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers.
+            - Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods.
+            - Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom.
+            - Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers.
 
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
@@ -161,6 +159,7 @@ where $\omega$ is the angular frequency of the oscillator.
 <img src="Images/QHOpotential.png" width=600>
 
 *The potential $V$ for the Quantum Harmonic Oscillator shown as a function of $x$, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to $ +\infty $ in its limits.*
+
 </div>
 
 In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
@@ -226,8 +225,8 @@ To get a better idea of the error we can plot it as a function of n, the results
 
 <img src="Images/outputt.png" width=1000>
 
-
 *The left hand plot shows the results for the first 100 energy lavels of our simulation compared to the analytical results shown in red. The plot on the right shows both the absoloute error (shown in green and referenced to the left y-axis) and the reletive error as a percentage of the true value (shown in yellow and referneced to the right hand y-axis.)*
+
 </div>
 
 ### Wavefunctions
@@ -239,6 +238,7 @@ We can also compare our numerically computed wavefucntions to their analytical c
 <img src="Images/output5.png" width=1000>
 
 *QHO  Analytical to simulation wavefucn and prob density comparisons*
+
 </div>
 
 
@@ -268,6 +268,7 @@ the probability density, which is given by $\psi^2$, and indicates the probabili
 <img src="Images/output7.png" width=1000>
 
 *The dotted u shape line shows the potential that we caluclated, combining the potential and the wavefunctions on this one plot allows us to see the classical limits, where the potential crosses each wavefunction. Classically the wavefucntion is not allowed to have a value other than 0 past these limits (turning points) but we can see here that it does, this is one of the dissagremments between classical and quantum theory.*
+
 </div>
 
 
@@ -314,6 +315,7 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 <img src="Images/output56.png" width=600>
 
 *The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
+
 </div>
 
 
@@ -342,6 +344,7 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 <img src="Images/outpuit.png" width=600>
 
 *The left hand plots show the first 9 simulated wavefucntions, $\psi$, for the hydrogen atom with $l = 0$, to the right hand side are the corresponding probability densities, $\psi^2$. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
+
 </div>
 
 
@@ -370,10 +373,9 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 
 *Caption*
 
-
 </div>
 
-To convert our  dimensionless results given in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ we can solve for the energy levels in terms of eV, by inputting the required constants :
+To convert our dimensionless results given in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ we can solve for the energy levels in terms of eV, by inputting the required constants,
 
 - $m_e$: mass of an electron $\approx 9.109 \times 10^{-31}$ kg
 - $e$: elementary charge $\approx 1.602 \times 10^{-19}$ C
@@ -385,7 +387,7 @@ $$
 \frac{(9.109 \times 10^{-31}) \times (1.602 \times 10^{-19})^4}{2 \times (4 \pi \times 8.854 \times 10^{-12})^2 \times (1.055 \times 10^{-34})^2} \approx 13.606 \, \text{eV}  \tag{23}
 $$
 
-Which we know is the enrgy of the ground state of the hydrogen atom, and each energy level is a multiple of this value. We can then convert our dimensionless results to eV by multiplying by 13.606.
+Which we know is the energy of the ground state of the hydrogen atom, and each energy level is a multiple of this value. We can then convert our dimensionless results to eV by multiplying by 13.606.
 
 
 <div align="center">
@@ -404,6 +406,8 @@ Which we know is the enrgy of the ground state of the hydrogen atom, and each en
 *Caption*
 
 </div>
+
+
 
 <div align="center">
 
@@ -459,6 +463,7 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 <img src="Images/output14.png" width=800>
 
 *Same plot as above with the added guides marking out the local maxima*
+
 </div>
 
 
@@ -481,6 +486,7 @@ For those familliar with the orbital shell model, this corresponds to the s orbi
 <img src="Images/output56.png" width=500>
 
 *The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
+
 </div>
 
 For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum. This is how we get our different orbital shapes, p, d, f, etc.
@@ -492,7 +498,6 @@ For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an ad
 
 *Hydrogen potential varying $l$. We can see that when $l = 0$ the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where $l \neq 0$ the potential is discontinous, resulting in the charecteristic shapes.*
 
-
 </div>
 
 
@@ -501,7 +506,6 @@ For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an ad
 <img src="Images/l3d.png" width=500>
 
 *3D representation of the shape of the Hydrogen orbitals as $l$ is varied. We see the sperically symetric case of $l=0$ and the bilatteral symetry where $ l \neq 0$.*
-
 
 </div>
 
@@ -518,6 +522,7 @@ Overall, for higher values of $l$, the potential energy becomes more repulsive a
 <img src="Images/l3output.png" width=600>
 
 *$l = 3$*
+
 </div>
 
 
@@ -527,6 +532,7 @@ Overall, for higher values of $l$, the potential energy becomes more repulsive a
 <img src="Images/ls.png" width=600>
 
 *$l = 0  - 5$*
+
 </div>
 
 
