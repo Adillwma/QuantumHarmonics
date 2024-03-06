@@ -244,12 +244,6 @@ We can also compare our numerically computed wavefucntions to their analytical c
 
 In this visual comparison we can see that the wavefunctions are in good agreement with the analytical solutions, with the only difference being a phase factor in one of the waves. This is to be expected as the phase is not a physical observable and is therefore not unique. This phase shift does not effect the probability density, which we find to be in good agreement with the analytical solutions. This is quantified further in [Appendix Section 2.1](#Appendix_stability).
 
-<div align="center">
-
-<img src="Images/int.png" width=1000>
-
-*Quantisation error in normalisation constraint for probability amplitudes*
-</div>
 
 Now we have verified our simulation works as expected, we can move on to visulising the wavefunctions and probability density of the QHO in more detail.
 
@@ -614,6 +608,12 @@ Overall, for higher values of $l$, the potential energy becomes more repulsive a
 
 
 
+<div align="center">
+
+<img src="Images/int.png" width=1000>
+
+*Quantisation error in normalisation constraint for probability amplitudes on the QHO*
+</div>
 
 
 
