@@ -6,11 +6,11 @@
 
 <img src="Images/QuantumHarmonics_Logo2.gif" width="1000"> 
 
-Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods.
+    - Implements the 1D Time-Independant Schrödinger Equation (TISE) using numerical methods.
 
-Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom.
+    - Solves for the eigenvalues and eigenvectors of the Quantum Harmonic Oscillator (QHO) and the Hydrogen Atom.
 
-Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers.
+    - Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom, and how they relate to the energy states and quantum numbers.
 
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
@@ -53,7 +53,7 @@ The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the cl
 ## Analytical Solution
 
 ### Energy Levels
-Analytically the energy levels of the quantum harmonic oscillator are given by :
+Analytically the **energy levels** of the **quantum harmonic oscillator** are given by :
 
 $$
 E_n = \hbar \omega (n + \frac{1}{2})  \tag{1}
@@ -68,16 +68,16 @@ This equation represents the **quantization** of energy levels in the quantum ha
 
 | n   | Analytical Result         | In terms of $\frac{1}{2}ℏ𝜔$ |
 |-----|----------------|-------------------|
-| 0   | $\frac{1}{2}ℏ𝜔$  | 1                 |
-| 1   | $1\frac{1}{2}ℏ𝜔$ | 3                 |
-| 2   | $2\frac{1}{2}ℏ𝜔$ | 5                 |
-| 3   | $3\frac{1}{2}ℏ𝜔$ | 7                 |
-| 4   | $4\frac{1}{2}ℏ𝜔$ | 9                 |
-| 5   | $5\frac{1}{2}ℏ𝜔$ | 11                |
-| 6   | $6\frac{1}{2}ℏ𝜔$ | 13                |
+| 1   | $\frac{1}{2}ℏ𝜔$  | 1                 |
+| 2   | $1\frac{1}{2}ℏ𝜔$ | 3                 |
+| 3   | $2\frac{1}{2}ℏ𝜔$ | 5                 |
+| 4   | $3\frac{1}{2}ℏ𝜔$ | 7                 |
+| 5   | $4\frac{1}{2}ℏ𝜔$ | 9                 |
+| 6   | $5\frac{1}{2}ℏ𝜔$ | 11                |
+| 7   | $6\frac{1}{2}ℏ𝜔$ | 13                |
 | ... | ...            | ...               |
 
-*Caption*
+*The table shows the first seven analytically derived energy states for the Quantum Harmonic Osciallator, we see that when the energy is expressed in terms of $\frac{1}{2}ℏ𝜔$ the energy levels are simply odd integers given by $2n + 1$.*
 
 </div>
 
@@ -85,13 +85,13 @@ This equation represents the **quantization** of energy levels in the quantum ha
 The analytical **eigenvectors** $\psi_n$ of the QHO are given by,
 
 $$
-\psi_n(x) = \frac{1}{\sqrt{2^n n! \sqrt{\pi}}} e^{-\frac{x^2}{2}} H_n(x)
+\psi_n(x) = \frac{1}{\sqrt{2^n n! \sqrt{\pi}}} e^{-\frac{x^2}{2}} H_n(x) \tag{2}
 $$
 
 This equation is made up of three terms, $\frac{1}{\sqrt{2^n n! \sqrt{\pi}}}$ is the normalization constant which ensures that the wavefunction is properly normalized, i.e. $\int_{-\infty}^{\infty} |\psi_n(x)|^2 dx = 1$. Next is the Gaussian term $e^{-\frac{x^2}{2}}$ representing the ground state probability distribution, which peaks at $x=0$ and decays rapidly as $x$ moves away from zero, and finally $H_n(x)$ is the Hermite polynomial of degree $n$, given by,
 
 $$
-H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2}
+H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2} \tag{3}
 $$
 
 Solving for the first three wavefunctions we get the following:
@@ -109,6 +109,7 @@ Solving for the first three wavefunctions we get the following:
 *The first three analytically solved wavefunctions for the Quantum Harmonic Oscillator. See [Appendix Section 1.3](#Appendix_QHOreferencetable) for a more comprehensive reference table.*
 
 </div>
+
 It is hard to get an idea of what these wavefunctions look like from the above table, but if we now plot the wavefunctions against the displacement in $x$ we get a much clearer view of thier shape and how that changes with the energy level.
 
 <div align="center">
@@ -128,13 +129,13 @@ We will now attempt to calulate the eigenvalues and eigenvectors of the same QHO
 The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
 
 $$
-\hat{H} \psi = \hat{E} \psi \tag{FIX!!} 
+\hat{H} \psi = \hat{E} \psi \tag{4} 
 $$
 
 The Hamiltonian operator $\hat{H}$ is given by 
 
 $$
-\hat{H} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{3}
+\hat{H} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{5}
 $$
 
 Where:
@@ -145,7 +146,7 @@ Where:
 For the quantum harmonic oscillator, the potential is :
 
 $$
-V(x) = \frac{1}{2}m \omega^2 x^2   \tag{7}
+V(x) = \frac{1}{2}m \omega^2 x^2   \tag{6}
 $$
 
 where $\omega$ is the angular frequency of the oscillator.
@@ -163,25 +164,25 @@ In order to find numerical solutions, we can divide the spatial dimension into $
 In order to define the matrix $\hat{H}$, we can use a discrete approximation of the 2nd derivative,
 
 $$ 
-\frac{d^2}{dx^2} \psi(x_i) \approx \frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{(\Delta x)^2}
+\frac{d^2}{dx^2} \psi(x_i) \approx \frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{(\Delta x)^2}  \tag{7}
 $$
 
 where $(\Delta x)$ is the distance between discrete points $x_i$. We will choose dimensionless units for each problem, where $x$ is measured in terms of a length $a$, and $E$ is therefore measured in units of $\frac{\hbar^2}{2m a^2}$.  We can therefore write the kinetic energy term of the Hamiltonian as a "tri-diagonal" matrix $D$, which has the leading diagonal,
 
 $$
-D_{i,i} = \frac{2}{(\Delta x)^2}  \tag{5}
+D_{i,i} = \frac{2}{(\Delta x)^2}  \tag{8}
 $$
 
 and the diagonals above and below this are,
 
 $$
-D_{i,i+1} = D_{i,i-1} = \frac{-1}{(\Delta x)^2}   \tag{6}
+D_{i,i+1} = D_{i,i-1} = \frac{-1}{(\Delta x)^2}   \tag{9}
 $$
 
 If we choose to measure $x$ in units of $\sqrt{\frac{\hbar}{m \omega}}$, then $E$ will be measured in units of $\frac{1}{2}\hbar \omega$, and the potential can be written,
 
 $$
-V_i(x_i) = i^2 (\Delta x)^2 = x_i^2   \tag{8}
+V_i(x_i) = i^2 (\Delta x)^2 = x_i^2   \tag{10}
 $$
 
 The potential term can be represented by a matrix where the leading diagonal is the potential evaluated at the $i$-th point in space, $V_{i,i} = V(x_i)$, and all other entries are zero. 
@@ -283,7 +284,7 @@ Having verified our method, we can use it to find the eigenvalues of a slightly 
 In addition to having to change the potential, we will also change to a spherical coordinate system to simplify our calculations as the hydrogen atom is spherically symmetric. In such a spherically symmetric system, the wavefunction can be written :
 
 $$
-\frac{1}{r}\Psi(r)Y_{lm}(\theta, \phi)e^{i m\phi} \tag{9}
+\frac{1}{r}\Psi(r)Y_{lm}(\theta, \phi)e^{i m\phi} \tag{11}
 $$
 
 where $Y_{lm}(\theta, \phi)$ are the spherical harmonic functions and l, m are the angular momentum quantum numbers. The radial function $\Psi(r)$ satisfies the time-independent Schrödinger equation, provided a suitable term is added to the potential.
@@ -291,18 +292,18 @@ where $Y_{lm}(\theta, \phi)$ are the spherical harmonic functions and l, m are t
 Now that we are using a spherical coordinate system, we discritise a range of radius values, $r$, instead of $x$. If we use the Bohr radius $a_0$ as the unit $r$, where :
 
 $$
-a_0 = \frac{4 \pi \epsilon \hbar^2}{m_e e^2}  \tag{10}
+a_0 = \frac{4 \pi \epsilon \hbar^2}{m_e e^2}  \tag{12}
 $$
 
 then the energy will be measured in units of :
 $$
-\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}  \tag{11}
+\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}  \tag{13}
 $$
 
 and the potential for the hydrogen atom can be written :
 
 $$
-V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{12}
+V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{14}
 $$
 
 This potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the **azimuthal quantum number** $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. If we analyse how the overall potential changes with respect to $l$:
@@ -311,7 +312,7 @@ This potential is the sum of the classical attractive Coulomb interaction betwee
    When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential:
    
    $$ 
-   V(r) = -\frac{k \cdot e^2}{r} \tag{13SORT!!} 
+   V(r) = -\frac{k \cdot e^2}{r} \tag{15} 
    $$
    
    For those familliar with the orbital shell model, this corresponds to the s orbital, which is spherically symmetric. The potential is solely determined by the attractive Coulomb interaction between the electron and the nucleus.
@@ -425,7 +426,7 @@ To convert our  dimensionless results given in terms of $\frac{m_e e^4}{2 (4 \pi
 
 Which yeilds :
 $$
-\frac{(9.109 \times 10^{-31}) \times (1.602 \times 10^{-19})^4}{2 \times (4 \pi \times 8.854 \times 10^{-12})^2 \times (1.055 \times 10^{-34})^2} \approx 13.606 \, \text{eV} \tag{13}
+\frac{(9.109 \times 10^{-31}) \times (1.602 \times 10^{-19})^4}{2 \times (4 \pi \times 8.854 \times 10^{-12})^2 \times (1.055 \times 10^{-34})^2} \approx 13.606 \, \text{eV}  \tag{23}
 $$
 
 Which we know is the enrgy of the ground state of the hydrogen atom, and each energy level is a multiple of this value. We can then convert our dimensionless results to eV by multiplying by 13.606.
