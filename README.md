@@ -37,14 +37,16 @@ Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom
 - [Contact](#Contact)
 - [Acknowledgements](#Acknowledgements)
 
+
 ## Introduction
-Our current understanding of the most fundemental aspects of our universe come from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behavior of quantum systems. A form of this equation known as the 'time-independant schrodinger equation' or TISE, providing insights into the quantized energy levels and spatial distributions of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically, in order to simulate various quantum systems, and visulise the results.
+Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of quantum systems. A form of this equation known as the 'time-independent Schrödinger equation' or TISE provides insights into the quantized energy levels and spatial distributions of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically to simulate various quantum systems and visualize the results.
 
 
 ## Part 1 - The Quantum Harmonic Oscillator 
-The quantum harmonic oscillator is a quantum mechanical analogue of the classical harmonic oscillator, representing a quantum system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The quantum harmonic oscillator is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
+The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, representing a quantum system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The quantum harmonic oscillator is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
-### Analytical 
+
+### Analytical Solution
 
 #### Energy Levels
 Analytically the energy levels of the quantum harmonic oscillator are given by :
@@ -55,7 +57,8 @@ $$
 
 where $n$ is a non-negative integer representing the primary quantum number of the energy level, $\hbar$ is the reduced Planck constant, and $\omega$ is the angular frequency of the oscillator. 
 
-This equation represents the **quantization** of energy levels in the quantum harmonic oscillator. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the Quantum Harmonic Oscilator, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels, so the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
+This equation represents the **quantization** of energy levels in the quantum harmonic oscillator. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the Quantum Harmonic Oscillator, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels, so the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
+
 
 <div align="center">
 
@@ -99,26 +102,24 @@ Solving for the first three wavefunctions we get the following:
 | 3 | $\frac{\sqrt{2}}{4 \sqrt[4]{\pi}}$ | $e^{- \frac{x^{2}}{2}}$ | $4 x^{2} - 2$ | $\frac{\sqrt{2} \cdot \left(4 x^{2} - 2\right) e^{- \frac{x^{2}}{2}}}{4 \sqrt[4]{\pi}}$ |
 |...|...|...|...|...|
 
-*The first three analytically solved wavefucntions for the Quantumn HArmonic Oscilator. See [Appendix Section 1.3](#Appendix_QHOreferencetable) for a more comprehensive reference table.*
+*The first three analytically solved wavefunctions for the Quantum Harmonic Oscillator. See [Appendix Section 1.3](#Appendix_QHOreferencetable) for a more comprehensive reference table.*
 
 </div>
-It is hard to get an idea of what these wavefunctions look like from the above table, but if we now plot the wavefunctions against the displacment in $x$ we get a much clearer view of what we are talking about. 
-
-Plotting the first 3 analytically derived wavefunctions we get :
+It is hard to get an idea of what these wavefunctions look like from the above table, but if we now plot the wavefunctions against the displacement in $x$ we get a much clearer view of thier shape and how that changes with the energy level.
 
 <div align="center">
 
 <img src="Images/wfa.png" width=600>
 
-*CHANGE LEGNED TO n1,n2,n3! Caption*
+*The first three analytically solved wavefunctions for the Quantum Harmonic Oscillator plotted against position*
 
 </div>
 
 
 ### Simulation 
-We will now attempt to calulate the eigenvalues and eigenvectors of the same QHO system, this time by solving the time independant schrodinger equation using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
+We will now attempt to calulate the eigenvalues and eigenvectors of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
 
-The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written :
+The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
 
 $$
 \hat{H} \psi = \hat{E} \psi \tag{FIX!!} 
@@ -153,24 +154,24 @@ where $\omega$ is the angular frequency of the oscillator.
 
 In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
 
-In order to define the matrix $\hat{H}$, we can use a discrete approximation of the 2nd derivative :
+In order to define the matrix $\hat{H}$, we can use a discrete approximation of the 2nd derivative,
 $$
 \frac{d^2}{dx^2} \psi(x_i) \rightarrow \frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{(\Delta x)^2}  \tag{4}
 $$
 
-where $(\Delta x)$ is the distance between discrete points $x_i$. We will choose dimensionless units for each problem, where $x$ is measured in terms of a length $a$, and $E$ is therefore measured in units of $\frac{\hbar^2}{2m a^2}$.  We can therefore write the kinetic energy term of the Hamiltonian as a "tri-diagonal" matrix $D$, which has the leading diagonal :
+where $(\Delta x)$ is the distance between discrete points $x_i$. We will choose dimensionless units for each problem, where $x$ is measured in terms of a length $a$, and $E$ is therefore measured in units of $\frac{\hbar^2}{2m a^2}$.  We can therefore write the kinetic energy term of the Hamiltonian as a "tri-diagonal" matrix $D$, which has the leading diagonal,
 
 $$
 D_{i,i} = \frac{2}{(\Delta x)^2}  \tag{5}
 $$
 
-and the diagonals above and below this are :
+and the diagonals above and below this are,
 
 $$
 D_{i,i+1} = D_{i,i-1} = \frac{-1}{(\Delta x)^2}   \tag{6}
 $$
 
-If we choose to measure $x$ in units of $\sqrt{\frac{\hbar}{m \omega}}$, then $E$ will be measured in units of $\frac{1}{2}\hbar \omega$, and the potential can be written :
+If we choose to measure $x$ in units of $\sqrt{\frac{\hbar}{m \omega}}$, then $E$ will be measured in units of $\frac{1}{2}\hbar \omega$, and the potential can be written,
 
 $$
 V_i(x_i) = i^2 (\Delta x)^2 = x_i^2   \tag{8}
@@ -178,13 +179,13 @@ $$
 
 The potential term can be represented by a matrix where the leading diagonal is the potential evaluated at the $i$-th point in space, $V_{i,i} = V(x_i)$, and all other entries are zero. 
 
-Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectivly. For performance reasons we will use the scipy.linalg.eigh_tridiagonal function to solve for the eigenvalues and eigenvectors of $H$, as it allows us to take advantage of the fact that we are working with diagonal and tridaigonal matricies. This is dicussed further in [Appendix Section 2.2](#Appendix_performance).
+Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectivly. For performance reasons we currently use the scipy.linalg.eigh_tridiagonal function, benefiting from its tailored functionality for diagonal and tridiagonal matrices. This is dicussed further in [Appendix Section 2.2](#Appendix_performance).
 
 ##### NOTE:
 It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additonally the x displacement (from which follows the range for the potential) must covering sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
-#### Eigenvalues (Energy Levels)
+#### Energy Levels
 
 We compare the computed eigenvalues with the expected eigenvalues.
 
@@ -211,14 +212,34 @@ To get a better idea of the error we can plot it as a function of n, the results
 
 <div align="center">
 
-<img src="Images/output24.png" width=1000>
+<img src="Images/outputt.png" width=1000>
 
-*CaptionGRAPH NEEDS UNITS!!!*
+
+*The left hand plot shows the results for the first 100 energy lavels of our simulation compared to the analytical results shown in red. The plot on the right shows both the absoloute error (shown in green and referenced to the left y-axis) and the reletive error as a percentage of the true value (shown in yellow and referneced to the right hand y-axis.)*
 </div>
 
-#### Eigenvectors (Wavefunctions)
+#### Wavefunctions
+We can also compare our numerically computed wavefucntions to their analytical counterparts to check that our simulation is working as expected. 
 
-Next you should plot the wavefunctions, ie. the eigenvectors.  Rather than plot the wavefunction directly, you should plot the probability density, which is given by $\psi^2$, and indicates the probability to find the particle at position $x$.
+
+<div align="center">
+
+<img src="Images/output5.png" width=1000>
+
+*QHO  Analytical to simulation wavefucn and prob density comparisons*
+</div>
+
+
+In this visual comparison we can see that the wavefunctions are in good agreement with the analytical solutions, with the only difference being a phase factor in one of the waves. This is to be expected as the phase is not a physical observable and is therefore not unique. This phase shift does not effect the probability density, which we find to be in good agreement with the analytical solutions. This is quantified further in [Appendix Section 2.1](#Appendix_stability).
+
+<div align="center">
+
+<img src="Images/int.png" width=1000>
+
+*Quantisation error in normalisation constraint for probability amplitudes*
+</div>
+
+Now we have verified our simulation works as expected, we can move on to visulising the wavefunctions and probability density of the QHO in more detail.
 
 <div align="center">
 
@@ -226,6 +247,11 @@ Next you should plot the wavefunctions, ie. the eigenvectors.  Rather than plot 
 
 *Caption*
 </div>
+
+the probability density, which is given by $\psi^2$, and indicates the probability to find the particle at position $x$.
+
+
+
 
 
 ### Combined Visulisation of Potential, Energy Levels and Position Probability Density for QHO
@@ -240,11 +266,11 @@ Next you should plot the wavefunctions, ie. the eigenvectors.  Rather than plot 
 
 
 
-# Part 2 - The Hydrogen Atom
+## Part 2 - The Hydrogen Atom
 
 ### Simulation
 
-Having verified our method, we can use it to find the eigenvalues of a more complex system - the Hydrogen atom.  In a spherically symmetric system, the wavefunction can be written :
+Having verified our method, we can use it to find the eigenvalues of a slightly more complex system - the Hydrogen atom. In a spherically symmetric system, the wavefunction can be written :
 
 $$
 \frac{1}{r}\Psi(r)Y_{lm}(\theta, \phi)e^{i m\phi} \tag{9}
@@ -363,7 +389,11 @@ The energy scale describes the required energy to move the electron from its bou
 In addition to the quantized negative energy states of the hydrogen atom, there is also a continuum of unbound positive energy states. 
 
 
-### Analytical 
+<div align="center">
+
+## Analytical Solution
+
+</div>
 
 #### Eigenvalues (Energy Levels)
 
@@ -457,20 +487,6 @@ comments on error of hydrogen simulation
 
 #### Eigenvectors (Wavefunctions)
 
-
-
-
-
-
-
-
-
-<div align="center">
-
-<img src="Images/output5.png" width=1000>
-
-*Caption QHO  Analytical to simulation wavefucn and prob density comparisons*
-</div>
 
 
 

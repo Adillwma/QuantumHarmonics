@@ -56,9 +56,10 @@ def QHO_simulation(x, delta_x, maxE_val, minE_val= 1):
                                                                             #If user specifies both a minimum and maximum eigenvalue, only eigenvalues within this range are calculated
     E_vals_tridiag, E_vectors_tridiag = eigh_tridiagonal(H_main, H_plusone, select="i", select_range=(minE_val-1, maxE_val-1))
     E_vectors_tridiag = E_vectors_tridiag / np.sqrt(delta_x)                    #Normalising the eigenvectors
-    p_densitys = E_vectors_tridiag**2
 
-    return V_qho, E_vals_tridiag, E_vectors_tridiag, p_densitys              #Returns all calulated values and steps for further processing or visulisation
+    E_vectors_tridiag = np.transpose(E_vectors_tridiag)                        #Transpose the eigenvectors to more intuitive format
+
+    return V_qho, E_vals_tridiag, E_vectors_tridiag              #Returns all calulated values and steps for further processing or visulisation
 
 
 if __name__ == "__main__":
@@ -71,6 +72,6 @@ if __name__ == "__main__":
     x_max = 5
 
     x, delta_x = generate_x(x_min, x_max, N)                           #Spatial Discretisation  function 
-    V_qho, E_vals_tridiag, E_vectors_tridiag, p_densitys = QHO_simulation(x, delta_x, max_n)
+    V_qho, E_vals_tridiag, E_vectors_tridiag = QHO_simulation(x, delta_x, max_n)
 
 
