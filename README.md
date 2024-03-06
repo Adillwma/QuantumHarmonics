@@ -190,7 +190,7 @@ The potential term can be represented by a matrix where the leading diagonal is 
 Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectivly. For performance reasons we currently use the scipy.linalg.eigh_tridiagonal function, benefiting from its tailored functionality for diagonal and tridiagonal matrices. This is dicussed further in [Appendix Section 2.2](#Appendix_performance).
 
 ##### NOTE:
-It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additonally the x displacement (from which follows the range for the potential) must covering sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
+It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additonally the x displacement (from which follows the range for the potential) must cover sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
 ### Energy Levels
@@ -203,13 +203,13 @@ Looking back on our table of analytical values for the energy levels, and fillin
 
 | n   | Analytical Result         | in terms of $\frac{1}{2}ℏ𝜔$ | Simulation Result | Simulation Error |
 |-----|----------------|-------------------|-------------------|------|
-| 0   | $\frac{1}{2}ℏ𝜔$  | 1                 | 1.00              |0.00|
-| 1   | $1\frac{1}{2}ℏ𝜔$ | 3                 | 3.00              |0.00|
-| 2   | $2\frac{1}{2}ℏ𝜔$ | 5                 | 4.99              |0.01|
-| 3   | $3\frac{1}{2}ℏ𝜔$ | 7                 | 6.98              |0.02|
-| 4   | $4\frac{1}{2}ℏ𝜔$ | 9                 | 8.97              |0.03|
-| 5   | $5\frac{1}{2}ℏ𝜔$ | 11                | 10.96             |0.04|
-| 6   | $6\frac{1}{2}ℏ𝜔$ | 13                | 12.95             |0.05|
+| 1   | $\frac{1}{2}ℏ𝜔$  | 1                 | 1.00              |0.00|
+| 2   | $1\frac{1}{2}ℏ𝜔$ | 3                 | 3.00              |0.00|
+| 3   | $2\frac{1}{2}ℏ𝜔$ | 5                 | 4.99              |0.01|
+| 4   | $3\frac{1}{2}ℏ𝜔$ | 7                 | 6.98              |0.02|
+| 5   | $4\frac{1}{2}ℏ𝜔$ | 9                 | 8.97              |0.03|
+| 6   | $5\frac{1}{2}ℏ𝜔$ | 11                | 10.96             |0.04|
+| 7   | $6\frac{1}{2}ℏ𝜔$ | 13                | 12.95             |0.05|
 | ... | ...            | ...               | ...               |...|
 
 *Caption*
@@ -306,43 +306,16 @@ $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{14}
 $$
 
-This potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the **azimuthal quantum number** $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. If we analyse how the overall potential changes with respect to $l$:
+This potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the **azimuthal quantum number** $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. 
 
-1. **$l = 0$ (s orbital)**:
-   When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential:
-   
-   $$ 
-   V(r) = -\frac{k \cdot e^2}{r} \tag{15} 
-   $$
-   
-   For those familliar with the orbital shell model, this corresponds to the s orbital, which is spherically symmetric. The potential is solely determined by the attractive Coulomb interaction between the electron and the nucleus.
+Iniitally we will focus only on this case where $ l = 0 $, and then later we will explore the effects of changing $ l $.
 
 <div align="center">
 
 <img src="Images/output56.png" width=600>
 
-*Columb potential*
+*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infinity $ in its limit, resulting in a spherically symetrical potential*
 </div>
-
-
-
-2. **$l > 0$ (p, d, f orbitals, etc.)**:
-   For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum.
-
-   - For $l = 1$ (p orbitals), the term becomes $1/r^2$, providing an additional repulsive contribution to the potential.
-   - For $l = 2$ (d orbitals), the term becomes $2/r^2$, which is stronger than for $l = 1$ and contributes even more repulsion.
-   - This trend continues for higher $l$ values, with the repulsion becoming more significant as $l$ increases.
-
-
-<div align="center">
-
-<img src="Images/outputcc.png" width=600>
-
-*Quantum Hydrogen potential, varying $l$, can see that when $l = 0$ the potential is the standard columb potential, but as $l$ increases, the centrifugal potential term increases*
-</div>
-
-
-Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
 
 
 
@@ -373,22 +346,6 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 </div>
 
 
-
-<div align="center">
-
-<img src="Images/l3output.png" width=600>
-
-*$l = 3$*
-</div>
-
-
-
-<div align="center">
-
-<img src="Images/ls.png" width=600>
-
-*$l = 1  - 5$*
-</div>
 
 
 
@@ -492,7 +449,7 @@ comments on error of hydrogen simulation
 
 
 
-## Combined Visulisation for Hydrogen Atom
+## Combined Visulisation for Hydrogen Atom at $l = 0$
 
 
 
@@ -518,54 +475,79 @@ In addition to the quantized negative energy states of the hydrogen atom, there 
 
 
 
+## Part 3 - The Hydrogen Atom with $l \neq 0$
+
+If we retrun to our hydrogen potential, given by equation 14, and change the value of $l$ we can see how the potential changes. If we analyse how the overall potential changes with respect to $l$ we end up with two distinct cases:
+
+1. **$l = 0$ (s orbital)**:
+   When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential for electrostsatic interaction between the electron and the nucleus. This is the case we explored in the previous section, and the potential, wavefunctions and the probability density are all spherically symmetric, as demonstrated.
+   
+   $$ 
+   V(r) = -\frac{k \cdot e^2}{r} \tag{15} 
+   $$
+   
+   For those familliar with the orbital shell model, this corresponds to the s orbital.
+
+<div align="center">
+
+<img src="Images/output56.png" width=600>
+
+*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infinity $ in its limit, resulting in a spherically symetrical potential*
+</div>
+
+
+
+2. **$l > 0$ (p, d, f orbitals, etc.)**:
+   For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum.
+
+   - For $l = 1$ (p orbitals), the term becomes $1/r^2$, providing an additional repulsive contribution to the potential.
+   - For $l = 2$ (d orbitals), the term becomes $2/r^2$, which is stronger than for $l = 1$ and contributes even more repulsion.
+   - This trend continues for higher $l$ values, with the repulsion becoming more significant as $l$ increases as demonstrated in the figure below.
+
+
+<div align="center">
+
+<img src="Images/outputcc.png" width=600>
+
+*Hydrogen potential varying $l$. We can see that when $l = 0$ the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where $l \neq 0$ the potential is discontinous, resulting in the charecteristic shapes.*
+
+
+</div>
+
+
+<div align="center">
+
+<img src="Images/l3d.png" width=600>
+
+*3D representation of the shape of the Hydrogen orbitals as $l$ is varied. We see the sperically symetric case of $l=0$ and the bilatteral symetry where $ l \neq 0$.*
+
+
+</div>
+
+
+
+Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
 
 
 
 
 
+<div align="center">
+
+<img src="Images/l3output.png" width=600>
+
+*$l = 3$*
+</div>
 
 
 
+<div align="center">
 
+<img src="Images/ls.png" width=600>
 
-##### NOTES!¬!!
+*$l = 0  - 5$*
+</div>
 
-
-Report:
-
-To find the values of the allowed energy eigenvalues of a quantum system we have to apply the hamiltonian opperator to the wavefunction $(\psi)$. To simplify the problem we have taken it in one dimension and in time independsnt form where the wavefuntion is just a function of $x$ $\psi(x)$
-
-
-$$H \psi(x) = E \psi(x)$$
-
-
-The Hamiltonian $H$ is given by 
-
-
-$$H = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V $$
-
-
-it contains two terms, the potential energy term V and the kinetic energy term D where 
-
-
-$$D = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}$$
-
-
-the potential term can be implemented easily as a simple function, however D requires the use of numerical methods as it contains a continuous derivative.
-
-
-Given this, the hamiltonian is implemented as a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.
-The matrix is symmetric, we can find the eigenvalues and eigenfunctions of the matrix using readily availibly pyton routines from the scipy libraries. I chose to test two solvers, scipy.linalg.eig and scipy.linalg.eigh_tridiagonal to compare their results. At first the eig fucntion was returning some strange results but then i realised the returned values were not sorted, so after adding a quicksort function via np.sort() it returned the exact same results as the eigh_tridiagonal function.
-
-As both function methods returned the exact same results it would be down to compute resources rather than accuracy to pick one, i did not implement a time loop to test the difference as my code is alredy substantial. Without having tested it i would pick using the eigh_tridiagonal function as it requires a much simpler hamiltonian function, less memory usage from not having to store the majority 0 valued matricies, and requires no np.sort to return the results.
-
-Testing both methods on the QHO problem and then comparing the Eigenvalues to the analytical results showed that the solvers can provide acuurate results for the QHO up to around an E_n value of 10. I then did the same for comparing eigenvectors to the analytical results but only the first 4 terms. The results of the solvers come out exactly mathcing the analytical eigenvectors albeit with a scale mismatch that i assume is down to a unit conversion scaling.
-
-Then made some interesting plots of the wavefunctions and probability distributions for a range of the QHO's energy eigenstates, including one which overlayed the potental with the wavefunctions to demonstrate the mismatch in classical and quantum theory in the ability of the wavefucntion to have a value outside of the classicly deifned turning points.
-
-Moved on to the hydrogen atom where ran through the same as for the QHO. Compared the potential of the QHO to the Hydrogen atom which showed interesting differences in the two systems. Also compared the analytical hydrogen eigenvalues with the solvers which provide accurate results up till around E_n 20 this time.
-
-The previous visuals were all based on the radial wavefunction which each have a unique energy value, but the total wavefucntion for the hydrogen atom consists of the radial wavefunction and the angular wavefunction which gives each energy level above n=1 more than one possible state, they are degenerate. Created visulisations for the hydrogen atoms l and m quantum numbers in 2 and 3D to show how the various numbers effect the probability distribution of the electron, showing the degenerate states that give rise to the s, p... orbital shells.
 
 
 
