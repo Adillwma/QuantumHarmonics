@@ -43,7 +43,7 @@ Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom
 - [Acknowledgements](#Acknowledgements)
 
 # Introduction
-Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of quantum systems. A form of this equation known as the 'time-independent Schrödinger equation' or TISE provides insights into the quantized energy levels and spatial distributions of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically to simulate various quantum systems and visualize the results.
+Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of non-reletivistic quantum systems. A form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' provides insights into the quantized energy levels and spatial distribution by finding the stationary states of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically to simulate various quantum systems and visualize the results. A comparison is made to between some examples that do indeed have exact analytical solutions to validate the numerical results.
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
@@ -161,8 +161,9 @@ where $\omega$ is the angular frequency of the oscillator.
 In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
 
 In order to define the matrix $\hat{H}$, we can use a discrete approximation of the 2nd derivative,
-$$
-\frac{d^2}{dx^2} \psi(x_i) \rightarrow \frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{(\Delta x)^2}  \tag{4}
+
+$$ 
+\frac{d^2}{dx^2} \psi(x_i) \approx \frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{(\Delta x)^2}
 $$
 
 where $(\Delta x)$ is the distance between discrete points $x_i$. We will choose dimensionless units for each problem, where $x$ is measured in terms of a length $a$, and $E$ is therefore measured in units of $\frac{\hbar^2}{2m a^2}$.  We can therefore write the kinetic energy term of the Hamiltonian as a "tri-diagonal" matrix $D$, which has the leading diagonal,
@@ -658,9 +659,6 @@ The previous visuals were all based on the radial wavefunction which each have a
 |...|...|...|...|...|
 
 </div>
-
-
-
 
 
 
