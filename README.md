@@ -572,13 +572,6 @@ The previous visuals were all based on the radial wavefunction which each have a
 
 
 
-### Interactive Graph TESTING
-
-<iframe src="https://raw.githubusercontent.com/Adillwma/QuantumHarmonics/main/graph.html" width="800" height="600"></iframe>
-
-
-
-
 ## Appendix
 
 
