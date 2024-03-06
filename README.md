@@ -43,17 +43,17 @@
 - [Acknowledgements](#Acknowledgements)
 
 # Introduction
-Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of non-reletivistic quantum systems. A form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' provides insights into the quantized energy levels and spatial distribution by finding the stationary states of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically to simulate various quantum systems and visualize the results. A comparison is made to between some examples that do indeed have exact analytical solutions to validate the numerical results.
+Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of non-reletivistic quantum systems. A form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' solves for the stationary states which reveal the quantized energy levels and spatial distribution of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically for various quantum systems and visualize the results. A comparison is made to some well understood examples that have exact analytical solutions in order to validate the numerical results and quantify our accuracy. We will specifically be solving for the **Energy Levels** and **Wavefunctions**, the latter of which will be used to calculate the probability density of the system.
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
-The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, representing a quantum system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The quantum harmonic oscillator is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
+The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
 
 ## Analytical Solution
 
 ### Energy Levels
-Analytically the **energy levels** of the **quantum harmonic oscillator** are given by :
+Analytically the **Energy Levels**, $E_n$, of the QHO are given by :
 
 $$
 E_n = \hbar \omega (n + \frac{1}{2})  \tag{1}
@@ -61,7 +61,7 @@ $$
 
 where $n$ is a non-negative integer representing the primary quantum number of the energy level, $\hbar$ is the reduced Planck constant, and $\omega$ is the angular frequency of the oscillator. 
 
-This equation represents the **quantization** of energy levels in the quantum harmonic oscillator. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the Quantum Harmonic Oscillator, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels, so the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
+This equation represents the **quantization** of energy levels in the QHO. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the QHO, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels, so the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
 
 
 <div align="center">
@@ -82,7 +82,7 @@ This equation represents the **quantization** of energy levels in the quantum ha
 </div>
 
 ### Wavefunctions
-The analytical **eigenvectors** $\psi_n$ of the QHO are given by,
+The analytical **wavefunctions** $\psi_n$ of the QHO are given by,
 
 $$
 \psi_n(x) = \frac{1}{\sqrt{2^n n! \sqrt{\pi}}} e^{-\frac{x^2}{2}} H_n(x) \tag{2}
@@ -314,7 +314,7 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 
 <img src="Images/output56.png" width=600>
 
-*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infinity $ in its limit, resulting in a spherically symetrical potential*
+*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
 </div>
 
 
@@ -342,7 +342,7 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 
 <img src="Images/outpuit.png" width=600>
 
-*$l = 0$*
+*The left hand plots show the first 9 simulated wavefucntions, $\psi$, for the hydrogen atom with $l = 0$, to the right hand side are the corresponding probability densities, $\psi^2$. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
 </div>
 
 
@@ -393,13 +393,13 @@ Which we know is the enrgy of the ground state of the hydrogen atom, and each en
 
 | n   | Analytical Result (eV) | Simulation Result (eV) | Simulation Error (eV)|
 |-----|-------------------------------|-------------------|------|
-| 0   | -13.6060                     | -14.1712          | -0.5905|
-| 1   | -3.4015                      | -3.4713           | -0.0721|
-| 2   | -1.5095                      | -1.5318           | -0.0232|
-| 3   | -0.8547                      | -0.8597           | -0.0095|
-| 4   | -0.5442                      | -0.5488           | -0.0041|
-| 5   | -0.3774                      | -0.3801           | -0.0014|
-| 6   | -0.2768                      | -0.2796           | -0.0007|
+| 1   | -13.6060                     | -14.1712          | -0.5905|
+| 2   | -3.4015                      | -3.4713           | -0.0721|
+| 3   | -1.5095                      | -1.5318           | -0.0232|
+| 4   | -0.8547                      | -0.8597           | -0.0095|
+| 5   | -0.5442                      | -0.5488           | -0.0041|
+| 6   | -0.3774                      | -0.3801           | -0.0014|
+| 7   | -0.2768                      | -0.2796           | -0.0007|
 | ... | ...                          | ...               |...|
 
 *Caption*
