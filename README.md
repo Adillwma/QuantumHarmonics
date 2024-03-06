@@ -18,37 +18,41 @@ Visulises the wavefunctions and probability density of the QHO and Hydrogen Atom
 
 </div>
 
-## Table of Contents
+# Table of Contents
 - [Introduction](#Introduction)
+
 - [Part 1 - The Quantum Harmonic Oscillator](#Part-1---The-Quantum-Harmonic-Oscillator)
-  * [Analytical](#Analytical)
-  * [Simulation](#Simulation)
-  * [Combined Visulisation](#Combined-Visulisation-of-Potential--Energy-Levels-and-Position-Probability-Density-for-QHO)
+  - [Analytical Solution](#Analytical-Solution)
+  - [Simulation](#Simulation)
+  - [Combined Visulisation for QHO](#Combined-Visulisation-for-QHO)
+
 - [Part 2 - The Hydrogen Atom](#Part-2---The-Hydrogen-Atom)
-    * [Simulation](#Simulation-1)
-    * [Combined Visulisation](#Combined-Visulisation-of-Potential--Energy-Levels-and-Position-Probability-Density-for-Hydrogen-Atom)
-    * [Analytical](#Analytical-1)
-- [Appendix](#Appendix)
-    * [Stability](#Stability)
-    * [Performance](#Performance)
+  - [Simulation](#Simulation-1)
+  - [Analytical Solution](#Analytical-Solution-1)
+  - [Combined Visulisation for Hydrogen Atom](#Combined-Visulisation-for-Hydrogen-Atom)
+
 - [References](#References)
-- [License](#License)
-- [Contributions](#Contributions)
+- [Appendix](#Appendix)
+  - [Stability](#Stability)
+  - [Performance](#Performance)
+  - [QHO Analytical Wavefunction Reference Table](#QHO-Analytical-Wavefunction-Reference-Table)
+
+- [Liscence](#Liscence)
+- [Contributing](#Contributing)
 - [Contact](#Contact)
 - [Acknowledgements](#Acknowledgements)
 
-
-## Introduction
+# Introduction
 Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of quantum systems. A form of this equation known as the 'time-independent Schrödinger equation' or TISE provides insights into the quantized energy levels and spatial distributions of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically to simulate various quantum systems and visualize the results.
 
 
-## Part 1 - The Quantum Harmonic Oscillator 
+# Part 1 - The Quantum Harmonic Oscillator 
 The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, representing a quantum system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The quantum harmonic oscillator is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
 
-### Analytical Solution
+## Analytical Solution
 
-#### Energy Levels
+### Energy Levels
 Analytically the energy levels of the quantum harmonic oscillator are given by :
 
 $$
@@ -77,7 +81,7 @@ This equation represents the **quantization** of energy levels in the quantum ha
 
 </div>
 
-#### Wavefunctions
+### Wavefunctions
 The analytical **eigenvectors** $\psi_n$ of the QHO are given by,
 
 $$
@@ -116,7 +120,9 @@ It is hard to get an idea of what these wavefunctions look like from the above t
 </div>
 
 
-### Simulation 
+## Simulation 
+
+### Methodology
 We will now attempt to calulate the eigenvalues and eigenvectors of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
 
 The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
@@ -185,7 +191,7 @@ Then using a linear algebra solver, we can solve for the eigenvalues and eigenve
 It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additonally the x displacement (from which follows the range for the potential) must covering sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
-#### Energy Levels
+### Energy Levels
 
 We compare the computed eigenvalues with the expected eigenvalues.
 
@@ -218,7 +224,7 @@ To get a better idea of the error we can plot it as a function of n, the results
 *The left hand plot shows the results for the first 100 energy lavels of our simulation compared to the analytical results shown in red. The plot on the right shows both the absoloute error (shown in green and referenced to the left y-axis) and the reletive error as a percentage of the true value (shown in yellow and referneced to the right hand y-axis.)*
 </div>
 
-#### Wavefunctions
+### Wavefunctions
 We can also compare our numerically computed wavefucntions to their analytical counterparts to check that our simulation is working as expected. 
 
 
@@ -254,7 +260,7 @@ the probability density, which is given by $\psi^2$, and indicates the probabili
 
 
 
-### Combined Visulisation of Potential, Energy Levels and Position Probability Density for QHO
+## Combined Visulisation for QHO
 
 <div align="center">
 
@@ -266,13 +272,14 @@ the probability density, which is given by $\psi^2$, and indicates the probabili
 
 
 
-## Part 2 - The Hydrogen Atom
-
-### Simulation
-
+# Part 2 - The Hydrogen Atom
 Having verified our method, we can use it to find the eigenvalues of a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yeild the energy levels and wavefunctions of the hydrogen atom, which we shall again compare to analytical results.
 
-In addition to having to cvhange the potential, we will also change to a spherical coordinate system to simplify our calculations as the hydrogen atom is spherically symmetric. In such a spherically symmetric system, the wavefunction can be written :
+
+## Simulation
+
+### Methodology
+In addition to having to change the potential, we will also change to a spherical coordinate system to simplify our calculations as the hydrogen atom is spherically symmetric. In such a spherically symmetric system, the wavefunction can be written :
 
 $$
 \frac{1}{r}\Psi(r)Y_{lm}(\theta, \phi)e^{i m\phi} \tag{9}
@@ -350,9 +357,9 @@ We can now use the same method as outlined in section 1 to create the kinetic en
 We must use a range of $r$ such that the wavefunction become negligible, and a large number of $r$ points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
-#### Energy Levels
+### Energy Levels
 
-#### Wavefunctions
+### Wavefunctions
 
 
 
@@ -387,7 +394,7 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 
 </div>
 
-#### Eigenvalues (Energy Levels)
+### Eigenvalues (Energy Levels)
 
 
 <div align="center">
@@ -453,7 +460,7 @@ comments on error of hydrogen simulation
 
 
 
-#### Eigenvectors (Wavefunctions)
+### Eigenvectors (Wavefunctions)
 
 
 
@@ -483,7 +490,7 @@ comments on error of hydrogen simulation
 
 
 
-### Combined Visulisation of Potential, Energy Levels and Position Probability Density for Hydrogen Atom
+## Combined Visulisation for Hydrogen Atom
 
 
 
@@ -507,8 +514,6 @@ The energy scale describes the required energy to move the electron from its bou
 
 In addition to the quantized negative energy states of the hydrogen atom, there is also a continuum of unbound positive energy states. 
 
-
-<div align="center">
 
 
 
@@ -562,80 +567,16 @@ The previous visuals were all based on the radial wavefunction which each have a
 
 
 
-## Appendix
-
-
-# Introduction
-
-Most of us will have vague memories of physics classes in school, during which we were taught about how objects move based on the forces that are acting upon them. This branch of physics, essentially the study of how things move and why they are where they are, is known as 'Mechanics'. Issiac Newton's laws of motion are the foundation of mechanics and for this reason it is often refered to as 'Newtonian Mechanics'. Though genrally the are is now refered to as 'classical Mechanics' as it has been superseeded by a more accurate and fundamental theory of the universe and the subject of this simulation and discussion, Quantum Mechanics. 
-
-The first sentance that usually follows any mention of quantum mechinics is to add that noone not event the people working with it daily understand it. This is not true, but does make for more exciting media coverage and is appreciated both by the media outlets and the scientists doing quantum wheelies. The theory is well understood and has been tested to an incredible degree of accuracy, furthermore many aspects of quantum mechincs are actually incredibly intuitive, easy to understand and downright beautiful. The reason for the rep as being to complicated to understand comes from certain areas of the theory where we are able to use the mathmatical formulisms to generate correct predictions about the real world however our verbal and mental explination for the physical significance of the actual mechnisms behind what is happening are still in dispute. This is not unique to quantum mechinics, a good example is gravity, we are able to use our current mathmatical forulisms for gravitation to calulate answers to a high degree of accuracy, however we do not have a complete understanding of the physical significance of the mechnisms behind it, Einstien brought our understanding to a new level with his theory of general relativity showing the effetc of gravity are due to a curvature of space-time rather than a force acting at a distance, yet we are still unable to provide a explination of the pysical mechainisms give rise to the curvature, or even what it actully means for space-time to curve. It is a fair point to raise to say that our current thedry of gravity is already known to be incomplete as it is a classical theory of gravity and we are yet to be able to incorperate gravity into our current quantum frameworks (this persuit is often known as the search for the theory of everything, as quantum field theory doosent currently describes every single fundemental particle and fundemental foce of nature other than gravity) however the point still stands that we are able to use the mathmatical forulisms to make correct predictions about the world, whilst not being able to explain the physical mechanism in a way that is intuitive to us and we do not hear people denouncing gravity as beyond our conception everytime it is mentioned.
-
-This simulation and write up aims to provide a way to bring together many seemingly disparate concepts in quantum mechanics to provide a more intuitive understanding of the subject. We also approch the topic from the concept of 'quantisation' and 'potential energy' that will feel very familliar to anyone who has walked up a hill or set of stairs before. 
-
-
-## Quantum Mechanics (Brief Overview)
-but the theory is so different from our everyday experience that it is hard to understand. The theory is based on the idea that the fundemental building blocks of the universe are not particles but waves, and that these waves are not waves of anything we can imagine, they are waves of probability.
-
-## Quantisation
-One of the main ideas of quantum meachnics that sets it apart from classical mechincs and contributes to he name of the field is the idea of **quantisation**. In classical mechanics we are used to the idea that reality is continuos, meaning you may be here, there, somwherein between the tow places, you might have a speed of 5m/s or 5.5m/s or 5.55 m/s we are used to the idea that there are indfinitely more smaller divisions of everything. In quantum mechanics however, we find that certian properties of the universe are quantised, meaning they can only take on certian values, and these values are not continous, they are discrete. This is actually incredibly intuitive idea, especially to any programmers out there, who are used to having to work in discrete values even if you wish you didnt have to. 
-
-This si quite a simple concept, on the one hand you coul dimaging a hill with a perfectly flat and sloped side being the continuous universe, wehre you can take any height position on thew hill, and then you could imagine beside it a set of steps, where you can only take on certian heights, and you can only move up or down in steps. This is the idea of quantisation, and it is a fundemental aspect of quantum mechanics. It actually greatly simplifies reality as there is no longer infginte space between any two points, and it explains the lack of diversity in the universe, as there are only certian 
-values that are allowed and so we will conformity in the fundemantal building blocks across the universe compared to one with continuos properties. 
-
-
-## Understanding Atoms
-ytou may say okay that is simple but what was the need for us to switch to this when we already had a perfectly nice continuos world view, cant we just stick to that. The answer is that the development of quantum mechnics was down to reality tellin gus that our previous ideas were wrong. One of the first indication that the universe was not as we thought came from the study of atoms. We had a pretty good idea of what they were made of, a nucleas in the centre made of protons and neutrons, and then electrons orbiting the nucleas. The problem was that the electrons were not behaving as we expected them to.
-
-
-## Quantum Numbers
-
-
-## Fundemental Properties
-One aspect of quantum mechanics that can be foriegn to people is the idea that certian properties that we think of as being intrinsic to an object, such as its position are not fundemental at all. A way to analogise this that immidetly makes sense is to imagine you are playing a computer game, you walk into a room in the game and there is an object in the room. The people who created the game may have defined in the games code that this item is to appear in this fixed position in the room, we would say that the object has a position that is fundemental. This is how classical mechanics functions, in that in classical mechanics we assume that objects intrisicly have a fundemental position, and then we just observe what that fundentmal position is. Quantum mechanics however is quite different from this natural assumption. In quatum mechanics certian properties that we think of as being intrinsic to an object, such as position are not fundemental at all. In the example of our game, instead of the code specifying the posiiton of the object, the code specifies a probability distribution of the position of the object, meaning the code specifies a range of possible locations and a probability of the object being in each of these locations, maybe a 10% chance of being in room A and 90% in room b, then when we play the game and load into the mission the ojects position will be randomly selected based ont heprabbailities and fixed in one of these locations. In this case the reality of the object is that it does not have a **fundemental** position, rather **it** has a probability distribution of positions and then when we load the game it takes a fixed position. The underlying reality of position is statistical not the other way round. Everything so far has been pretty simple, but we cannot avoid the question, in real life when do objects go from thier probability thingy to actually being in a position? This is a shame as it is almost the first question anyone would ask and is the exact part of quatum mechanics that is currently hotly debated, we do not have a way to describe the physical significance and mechanism for this process, leading to many curious people getting bogged down right from the start. In our game analogy the object becomes fixed in a place when the game level loads, in reality qauntum objects take a fixed position when they are measured, which is known as the 'collapse' of the wavefunction. Luckily this question, whilst incredible interesting, is not neccesary to understand any of the rest of quantum mechanics and for those interested is already widely covered. We shall skirt round when and how things go from probabilities to 'localised' in this write up, and focus on the more intuitive aspects of quantum mechanics. 
-
-You may be thinking well that is interesting but what does it matter if in the code the item is defined as a fixed position or a probability distribution, as once I'm in the game it take on a fixed position either way, and the probility code is then meaningless! This is a fair point and where my analogy falls down, as in our game example the interactions the object is a part of are calulated based on the expression of its position at that time. In reality, interactions of quantum mechanical systems and objects happen based on the fundemental properties not the macroscopic expressions, and the fundemental properties do not include position, rather the wavefunction. 
 
 
 
 
+# References
+
+# Appendix
 
 
-### Quantum Numbers
-
-Quantum numbers are numbers that specify the state of a quantum system. If you know all of the quantum numbers for a system that is a complete description of state. A way to analogise this is to think of a chess board. To have a full definition of the state of the chess game i.e. all the information required to exactly recreate the game, you could write down the information of whatis present in each qaure of the board. However, this fixes the information to the spacial domain, wheras in reality properties are tied to objects not the space they inhabit. Additonally stroign information for every square (spatial position) requires more information storage as data is kept on empty squares.For an object focused definiton of state in the smallest amount of information possible, you would need to know the piece type, color (white/black) and the board position for each piece on the board. The amount of information required to define the state of the chess game is 3 values per piece present on the board, we could give these three bits of information quantum numbers a b and c for chess pieces. 
-
-An important note here is that although i have used the position of the chess peices as one of thier quantum numbers in this analogy, this is only to get across the conncept of a full definition of state for a system. There is no quantum number tied to position, they are tied to the properties of the object, from which the positotion is emergent. Further, quantum mechanics does not allow for the exact position of a particle to be known at all, only the **probability** of finding it in a certain position, which we derive from the wavefunction.
-
-
-
-
-The quantum harmonic oscillator, which describes a particle (often an electron) confined in a quadratic potential well, possesses only one quantum number, which represents the energy level of the oscillator. This is the single piece of information required to define the entire state of the oscillating system. The quantum number representing the energy of a quantum system is called the principle quantum number, and is denoted by the letter $n$. Its values are non-negative integers (0, 1, 2, ...) meaning a quantum harmonic oscillator can have energy levels of n = 1, n = 2, n = 3 etc.
-
-In the case of an electron in an atom the quantum numbers are more complex, as the electron is confined in a 3D potential well. The quantum numbers for an electron in an atom are the principal quantum number (n), the azimuthal quantum number (l), the magnetic quantum number (m), and the spin quantum number (s). The principal quantum number (n) is the same as for the quantum harmonic oscillator, and represents the energy level of the electron. The azimuthal quantum number (l) represents the angular momentum of the electron, and the magnetic quantum number (m) represents the projection of the angular momentum along a given axis. The spin quantum number (s) represents the intrinsic angular momentum of the electron, either spin up or spin down.
-
-
-<div align="center">
-
-<img src="Images/output16.png" width=800>
-
-*Caption*
-</div>
-
-
-#### Spin Quantum Number (s)
-
-#### Azimuthal Quantum Number (l)
-
-#### Magnetic Quantum Number (m)
-
-
-
-
-
-
-### Stability
-
+## Stability
 
 <div align="center">
 
@@ -684,33 +625,15 @@ In the case of an electron in an atom the quantum numbers are more complex, as t
 
 
 
-## License
-This project is not currently licensed. For more information please get in touch via the contact details below.
-
-## Contributions
-Contributions to this codebase are welcome! If you encounter any issues, bugs or have suggestions for improvements please open an issue or a pull request on the [GitHub repository](https://github.com/Adillwma/QuantumHarmonics).
-
-## Contact
-[adill@neuralworkx.com](mailto:adill@neuralworkx.com).
-
-## Acknowledgements
-Prof. Sandu Popescu, FRS for many inspiring and enlightening lectures. 
-
-## References
-
-## Appendix
-
-
-### Stability
 
 
 
-### Performance
+## Performance
 
 
 
 
-### QHO Analytical Wavefunction Reference Table:
+## QHO Analytical Wavefunction Reference Table:
 
 <div align="center">
 
@@ -739,3 +662,17 @@ Prof. Sandu Popescu, FRS for many inspiring and enlightening lectures.
 
 
 
+
+
+
+# License
+This project is not currently licensed. For more information please get in touch via the contact details below.
+
+# Contributing
+Contributions to this codebase are welcome! If you encounter any issues, bugs or have suggestions for improvements please open an issue or a pull request on the [GitHub repository](https://github.com/Adillwma/QuantumHarmonics).
+
+# Contact
+[adill@neuralworkx.com](mailto:adill@neuralworkx.com).
+
+# Acknowledgements
+Prof. Sandu Popescu, FRS for many inspiring and enlightening lectures. 
