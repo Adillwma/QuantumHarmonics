@@ -358,7 +358,7 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 
 <div align="center">
 
-<img src="Images/l0output.png" width=600>
+<img src="Images/outpuit.png" width=600>
 
 *$l = 0$*
 </div>
@@ -374,32 +374,14 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 
 
 
-
-
-### Combined Visulisation of Potential, Energy Levels and Position Probability Density for Hydrogen Atom
-
-
-
 <div align="center">
 
-<img src="Images/output18.png" width=800>
+<img src="Images/ls.png" width=600>
 
-*Caption*
+*$l = 1  - 5$*
 </div>
 
-<div align="center">
 
-<img src="Images/output17.png" width=800>
-
-*Caption*
-</div>
-
-The energy scale describes the required energy to move the electron from its bound state to infinity, a simpler way to think of it is the sum total energy of the nucleas and the electron is this much lower (hence the negative) than if they were seperated by an infinite distance
-
-In addition to the quantized negative energy states of the hydrogen atom, there is also a continuum of unbound positive energy states. 
-
-
-<div align="center">
 
 ## Analytical Solution
 
@@ -412,41 +394,17 @@ In addition to the quantized negative energy states of the hydrogen atom, there 
 
 | n   | Analytical Result | in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | Simulation Result ($\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$) | Simulation Error ($\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$) |
 |-----|------------------|-------------------------------|-------------------|------|
-| 0   | $-1.000 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -1.0000                      | -1.0433           |-0.0433|
-| 1   | $-0.250 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.2500                      | -0.2553           |-0.0053|
-| 2   | $-0.111 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.1111                      | -0.1127           |-0.0017|
-| 3   | $-0.063 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0625                      | -0.0632           |-0.0007|
-| 4   | $-0.040 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0400                      | -0.0403           |-0.0003|
-| 5   | $-0.027 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0278                      | -0.0280           |-0.0002|
-| 6   | $-0.020 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204                      | -0.0205           |-0.0001|
+| 0   | $-1 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -1.0000                      | -1.0433           |-0.0433|
+| 1   | $-\frac{1}{4} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.2500                      | -0.2553           |-0.0053|
+| 2   | $-\frac{1}{9} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.1111                      | -0.1127           |-0.0017|
+| 3   | $-\frac{1}{16} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0625                      | -0.0632           |-0.0007|
+| 4   | $-\frac{1}{25} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0400                      | -0.0403           |-0.0003|
+| 5   | $-\frac{1}{36} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0278                      | -0.0280           |-0.0002|
+| 6   | $-\frac{1}{49} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204                      | -0.0205           |-0.0001|
 | ... | ...            | ...               | ...               |...|
 
 *Caption*
 
-
-The pattern in the given fractions seems to involve decreasing magnitudes of the fractions with a negative sign. Let's analyze:
-
-|result|
-|-----------|
-|$-1 = -\frac{1}{1}$ |
-|$-0.25 = -\frac{1}{4}$ |
-|$-0.111 = -\frac{1}{9}$ |
-|$-0.0625 = -\frac{1}{16}$ |
-|$-0.04 = -\frac{1}{25}$ |
-
-
-
-Each fraction appears to be the reciprocal of the square of an integer:
-
-1^2 = 1
-2^2 = 4
-3^2 = 9
-4^2 = 16
-5^2 = 25
-
-So, the pattern is:
-
--1/(n^2)
 
 </div>
 
@@ -521,6 +479,38 @@ comments on error of hydrogen simulation
 *Caption 3D visualisation of the Hydrogen electron position probability density*
 
 </div>
+
+
+
+
+### Combined Visulisation of Potential, Energy Levels and Position Probability Density for Hydrogen Atom
+
+
+
+<div align="center">
+
+<img src="Images/output18.png" width=800>
+
+*Caption*
+
+</div>
+
+<div align="center">
+
+<img src="Images/output17.png" width=800>
+
+*Caption*
+
+</div>
+
+The energy scale describes the required energy to move the electron from its bound state to infinity, a simpler way to think of it is the sum total energy of the nucleas and the electron is this much lower (hence the negative) than if they were seperated by an infinite distance
+
+In addition to the quantized negative energy states of the hydrogen atom, there is also a continuum of unbound positive energy states. 
+
+
+<div align="center">
+
+
 
 
 
