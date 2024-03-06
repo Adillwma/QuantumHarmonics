@@ -257,7 +257,7 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <img src="Images/output21.png" width=1000>
 
-*Caption dddddddddddddd*
+*Caption*
 
 </div>
 
