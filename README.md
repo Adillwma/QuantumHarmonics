@@ -31,6 +31,10 @@
   - [Analytical Solution](#Analytical-Solution-1)
   - [Combined Visulisation for Hydrogen Atom](#Combined-Visulisation-for-Hydrogen-Atom)
 
+- [Part 3 - The Hydrogen Atom with $l \neq 0$](#Part-3---The-Hydrogen-Atom-with-$l-\neq-0$)
+  - [Simulation](#Simulation-2)
+  - [Combined Visulisations](#Combined-Visulisation-for-Hydrogen-Atom-at-$l-\neq-0$)
+
 - [References](#References)
 - [Appendix](#Appendix)
   - [Stability](#Stability)
@@ -47,7 +51,7 @@ Our current understanding of the most fundamental aspects of our universe comes 
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
-The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
+The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, a system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
 
 ## Analytical Solution
@@ -156,7 +160,7 @@ where $\omega$ is the angular frequency of the oscillator.
 
 <img src="Images/QHOpotential.png" width=600>
 
-*Caption*
+*The potential $V$ for the Quantum Harmonic Oscillator shown as a function of $x$, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to $ +\infty $ in its limits.*
 </div>
 
 In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
@@ -253,7 +257,8 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <img src="Images/output21.png" width=1000>
 
-*Caption*
+*Caption dddddddddddddd*
+
 </div>
 
 the probability density, which is given by $\psi^2$, and indicates the probability to find the particle at position $x$.
@@ -427,7 +432,7 @@ comments on error of hydrogen simulation
 
 
 
-
+So far we have been calculating in one dimension, but the hydrogen atom is a three-dimensional system. Fortunatly, in the $l = 0$ case, the wavefunctions are spherically symmetric, so we can extend our 1D results to 2D and 3D by simply squaring the wavefunction to get the probability density, and then plotting the probability density as a function of the radial distance from the nucleus, to get a more complete picture of the electron position probability density.
 
 <div align="center">
 
@@ -442,7 +447,7 @@ comments on error of hydrogen simulation
 
 <img src="Images/output23.png" width=800>
 
-*Caption 3D visualisation of the Hydrogen electron position probability density*
+*3D visualisation of the Hydrogen electron position probability densites maxima, it is very important to note that this is just a plot of the maximas in the density, there are not exact shells, which this image could indicate.*
 
 </div>
 
@@ -475,7 +480,7 @@ In addition to the quantized negative energy states of the hydrogen atom, there 
 
 
 
-## Part 3 - The Hydrogen Atom with $l \neq 0$
+# Part 3 - The Hydrogen Atom with $l \neq 0$
 
 If we retrun to our hydrogen potential, given by equation 14, and change the value of $l$ we can see how the potential changes. If we analyse how the overall potential changes with respect to $l$ we end up with two distinct cases:
 
@@ -492,7 +497,7 @@ If we retrun to our hydrogen potential, given by equation 14, and change the val
 
 <img src="Images/output56.png" width=600>
 
-*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infinity $ in its limit, resulting in a spherically symetrical potential*
+*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
 </div>
 
 
