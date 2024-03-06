@@ -270,7 +270,9 @@ the probability density, which is given by $\psi^2$, and indicates the probabili
 
 ### Simulation
 
-Having verified our method, we can use it to find the eigenvalues of a slightly more complex system - the Hydrogen atom. In a spherically symmetric system, the wavefunction can be written :
+Having verified our method, we can use it to find the eigenvalues of a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yeild the energy levels and wavefunctions of the hydrogen atom, which we shall again compare to analytical results.
+
+In addition to having to cvhange the potential, we will also change to a spherical coordinate system to simplify our calculations as the hydrogen atom is spherically symmetric. In such a spherically symmetric system, the wavefunction can be written :
 
 $$
 \frac{1}{r}\Psi(r)Y_{lm}(\theta, \phi)e^{i m\phi} \tag{9}
@@ -295,7 +297,7 @@ $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{12}
 $$
 
-These are called Rydberg atomic units, and greatly simplify our calulations. The potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the azimuthal quantum number $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. Let's analyze how this potential changes with respect to $l$:
+This potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the **azimuthal quantum number** $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. If we analyse how the overall potential changes with respect to $l$:
 
 1. **$l = 0$ (s orbital)**:
    When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential:
@@ -304,16 +306,7 @@ These are called Rydberg atomic units, and greatly simplify our calulations. The
    V(r) = -\frac{k \cdot e^2}{r} \tag{13SORT!!} 
    $$
    
-   . This corresponds to the s orbital, which is spherically symmetric. The potential is solely determined by the attractive Coulomb interaction between the electron and the nucleus.
-
-2. **$l > 0$ (p, d, f orbitals, etc.)**:
-   For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum.
-
-   - For $l = 1$ (p orbitals), the term becomes $1/r^2$, providing an additional repulsive contribution to the potential.
-   - For $l = 2$ (d orbitals), the term becomes $2/r^2$, which is stronger than for $l = 1$ and contributes even more repulsion.
-   - This trend continues for higher $l$ values, with the repulsion becoming more significant as $l$ increases.
-
-Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
+   For those familliar with the orbital shell model, this corresponds to the s orbital, which is spherically symmetric. The potential is solely determined by the attractive Coulomb interaction between the electron and the nucleus.
 
 <div align="center">
 
@@ -322,12 +315,29 @@ Overall, for higher values of $l$, the potential energy becomes more repulsive a
 *Columb potential*
 </div>
 
+
+
+2. **$l > 0$ (p, d, f orbitals, etc.)**:
+   For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum.
+
+   - For $l = 1$ (p orbitals), the term becomes $1/r^2$, providing an additional repulsive contribution to the potential.
+   - For $l = 2$ (d orbitals), the term becomes $2/r^2$, which is stronger than for $l = 1$ and contributes even more repulsion.
+   - This trend continues for higher $l$ values, with the repulsion becoming more significant as $l$ increases.
+
+
 <div align="center">
 
 <img src="Images/outputcc.png" width=600>
 
 *Quantum Hydrogen potential, varying $l$, can see that when $l = 0$ the potential is the standard columb potential, but as $l$ increases, the centrifugal potential term increases*
 </div>
+
+
+Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
+
+
+
+
 
 We can now use the same method as outlined in section 1 to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
 
@@ -340,9 +350,9 @@ We can now use the same method as outlined in section 1 to create the kinetic en
 We must use a range of $r$ such that the wavefunction become negligible, and a large number of $r$ points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
-#### Eigenvalues (Energy Levels)
+#### Energy Levels
 
-#### Eigenvectors (Wavefunctions)
+#### Wavefunctions
 
 
 
@@ -562,6 +572,9 @@ The previous visuals were all based on the radial wavefunction which each have a
 
 
 
+### Interactive Graph TESTING
+
+<iframe src="https://" width="800" height="600"></iframe>
 
 
 
