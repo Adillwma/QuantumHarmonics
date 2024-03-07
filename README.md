@@ -2,9 +2,11 @@
 
 # QuantumHarmonics
 ### Author: Adill Al-Ashgar
-#### Solving the Time-Independant Schrödinger Equation numerically to find the stationary wavefunctions and allowed energy states of a quantum system. 
+
 
 <img src="Images/QuantumHarmonics_Logo2.gif" width="800"> 
+
+#### Solving the Time-Independant Schrödinger Equation numerically to find the stationary wavefunctions and allowed energy states of a quantum system. 
 
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
@@ -261,7 +263,7 @@ Putting together the results and visualisations generated so far, we can see the
 
 
 # Part 2 - The Hydrogen Atom
-Having verified our method, we can use it to solve a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yeild the energy levels and wavefunctions which we shall again compare to analytical results.
+Having verified our method, we can use it to solve a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yield the energy levels and wavefunctions which we shall again compare to analytical results.
 
 In addition to having to change the potential, we will also change to a spherical coordinate system to simplify our calculations. In such a spherically symmetric system, the wavefunction can be written,
 
@@ -271,13 +273,13 @@ $$
 
 where $Y_{lm}(\theta, \phi)$ are the spherical harmonic functions and l, m are the angular momentum quantum numbers. The radial function $\Psi(r)$ satisfies the time-independent Schrödinger equation, provided a suitable term is added to the potential.
 
-Now that we are using a spherical coordinate system, we discritise a range of radius values, $r$, instead of $x$. If we use the Bohr radius $a_0$ as the unit $r$, where :
+Now that we are using a spherical coordinate system, we discretise a range of radius values, $r$, instead of $x$. If we use the Bohr radius $a_0$ as the unit $r$, where,
 
 $$
 a_0 = \frac{4 \pi \epsilon \hbar^2}{m_e e^2}  \tag{12}
 $$
 
-then the energy will be measured in units of :
+then the energy will be measured in units of,
 
 $$
 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}  \tag{13}
@@ -290,7 +292,7 @@ $$
 
 ### Energy Levels
 
-Given the units we have selcted to work in for convieience, the analytically derived energy levels of the hydrogen atom are given by the formula,
+Given the units we have selected to work in for convenience, the analytically derived energy levels of the hydrogen atom are given by the formula,
 
 $$
 E_n = -\frac{1}{n^2}
@@ -322,7 +324,7 @@ $$
 
 ### Methodology
 
-Given our choice of units the potential for the hydrogen atom can be written :
+Given our choice of units the potential for the hydrogen atom can be written,
 
 $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{14}
@@ -336,11 +338,11 @@ Initially we will focus only on this case where $l=0$, and then later we will ex
 
 <img src="Images/output56.png" width=500>
 
-*The potential for Hydrogen when the value of quantum number* $l$ *is zero. This is effectivly the electrostatic Columb potential. The potential for* $l=0$ *is continuous, going to* $-\infty$ *in its limit, resulting in a spherically symetrical potential*
+*The potential for Hydrogen when the value of quantum number* $l$ *is zero. This is effectively the electrostatic Columb potential. The potential for* $l=0$ *is continuous, going to* $-\infty$ *in its limit, resulting in a spherically symmetric potential*
 
 </div>
 
-We can now use the same method as outlined in [Part 1](#Part-1---The-Quantum-Harmonic-Oscillator) to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
+We can now use the same method as outlined in [Part 1](#Part-1---The-Quantum-Harmonic-Oscillator) to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We again use our linear algebra solver to find the eigenvalues and eigenvectors of $H$ and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
 
 ##### *NOTE: We must use a range of* $r$ *such that the wavefunction become negligible, and a large number of* $r$ *points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).*
 
@@ -372,7 +374,7 @@ To convert our dimensionless results given in terms of $\frac{m_e e^4}{2 (4 \pi 
 - $\epsilon_0$: vacuum permittivity $\approx 8.854 \times 10^{-12}$ F/m
 - $\hbar$: reduced Planck constant $\approx 1.055 \times 10^{-34}$ J·s
 
-Which yeilds :
+Which yields,
 
 $$
 \frac{(9.109 \times 10^{-31}) \times (1.602 \times 10^{-19})^4}{2 \times (4 \pi \times 8.854 \times 10^{-12})^2 \times (1.055 \times 10^{-34})^2} \approx 13.606 \, \text{eV}  \tag{23}
@@ -406,14 +408,13 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 
 <img src="Images/outpuit.png" width=600>
 
-*The left hand plots show the first 9 simulated wavefucntions,* $\psi$*, for the hydrogen atom with* $l = 0$*, to the right hand side are the corresponding probability densities,* $|\psi|^2$*. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as* $n$ *increases causing the maximum amplitude to decrease.*
+*The left hand plots show the first 9 simulated wavefunctions,* $\psi$*, for the hydrogen atom with* $l = 0$*, to the right hand side are the corresponding probability densities,* $|\psi|^2$*. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as* $n$ *increases causing the maximum amplitude to decrease.*
 
 </div>
 
-We can see from our findings that the proabability densitys correctly predict what we observe in the real world, which is that electrons with higher energy will be found further from the nucleus, The peak of the probability density is the most likely place to find the electron, and this correspond to the classically predicted radius. However, There is also a probability of a higher energy electron being found closer to the nucleus than predicted by classical physics (or further away). This is a result of the wave nature of the electron, and is a key feature of quantum mechanics.
+We can see from our findings that the probability densities correctly predict what we observe in the real world, which is that electrons with higher energy will be found further from the nucleus, The peak of the probability density is the most likely place to find the electron, and this correspond to the classically predicted radius. However, there is also a probability of a higher energy electron being found closer to the nucleus than predicted by classical physics (or further away). This is a result of the wave-like nature of the electron and is a key feature of quantum mechanics.
 
-
-## Combined Visulisation for Hydrogen Atom at $l = 0$
+## Combined Visualisation for Hydrogen Atom at $l = 0$
 
 
 
@@ -421,11 +422,11 @@ We can see from our findings that the proabability densitys correctly predict wh
 
 <img src="Images/output18.png" width=600>
 
-*The plot shows the simulated probability density corresponding to the wavefunctions for* $n = 1$ *through to* $n=5$ *overlayed upon the potential. Each probability density is plotted at corresponding energy level* $E_n$ *calulated through the simulation.*
+*The plot shows the simulated probability density corresponding to the wavefunctions for* $n = 1$ *through to* $n=5$ *overlayed upon the potential. Each probability density is plotted at corresponding energy level* $E_n$ *calculated through the simulation.*
 
 </div>
 
-We can get an idea of how the probability density manifests by adding some perspective shifted circles onto our plot to indicate the maxima of the probability density. It is important to note these are mereley a guide to the eye, to highlight the local maximas, the probability density is a continuous function and is not limited to these circled radii.
+We can get an idea of how the probability density manifests by adding some perspective shifted circles onto our plot to indicate the maxima of the probability density. It is important to note these are merely a guide to the eye, to highlight the local maxima, the probability density is a continuous function and is not limited to these circled radii.
 
 
 <div align="center">
@@ -436,9 +437,9 @@ We can get an idea of how the probability density manifests by adding some persp
 
 </div>
 
-The energy scale describes the required energy to move the electron from its bound state to infinity, a simpler way to think of it is the sum total energy of the nucleas and the electron is this much lower (hence the negative) than if they were seperated by an infinite distance
+The energy scale describes the required energy to move the electron from its bound state to infinity, a simpler way to think of it is the sum total energy of the nucleus and the electron is this much lower (hence the negative) than if they were separated by an infinite distance.
 
-So far we have been calculating in one dimension, but the hydrogen atom is a three-dimensional system. Fortunatly, in the $l = 0$ case, the wavefunctions are spherically symmetric, so we can extend our 1D results to 2D and 3D by simply squaring the wavefunction to get the probability density, and then plotting the probability density as a function of the radial distance from the nucleus.
+So far, we have been calculating in one dimension, but the hydrogen atom is a three-dimensional system. Fortunately, in the $l = 0$ case, the wavefunctions are spherically symmetric, so we can extend our 1D results to 2D and 3D by simply squaring the wavefunction to get the probability density, and then plotting the probability density as a function of the radial distance from the nucleus.
 
 <div align="center">
 
@@ -448,7 +449,7 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 
 
-*We can expand our soloution to two dimensions in this case where* $l = 0$ *as it is perfectly spherically symetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visulise how the range over which the probability density extends grows as* $n$ *is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing* $n$*.*
+*We can expand our solution to two dimensions in this case where* $l = 0$ *as it is perfectly spherically symmetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visualise how the range over which the probability density extends grows as* $n$ *is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing* $n$.
 
 </div>
 
@@ -457,9 +458,9 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 # Part 3 - The Hydrogen Atom with $l \neq 0$
 
-If we retrun to our hydrogen potential, given by equation 14, and change the value of $l$ we can see how the potential changes. If we analyse how the overall potential changes with respect to $l$ we end up with two distinct cases:
+If we return to our hydrogen potential, given by equation 14, and change the value of $l$ we can see how the potential changes. If we analyse how the overall potential changes with respect to $l$ we end up with two distinct cases:
 
-When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential for electrostsatic interaction between the electron and the nucleus. This is the case we explored in the previous section, and the potential, wavefunctions and the probability density are all spherically symmetric, as demonstrated. For those familliar with the orbital shell model, this corresponds to the s orbital.
+When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulomb potential for electrostatic interaction between the electron and the nucleus. This is the case we explored in the previous section, and the potential, wavefunctions and the probability density are all spherically symmetric, as demonstrated. For those familiar with the orbital shell model, this corresponds to the s orbital.
 
 For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum. This is how we get our different orbital shapes, p, d, f, etc.
 
@@ -468,24 +469,25 @@ For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an ad
 
 <img src="Images/outputcc.png" width=500>
 
-*Hydrogen potential varying* $l$*. We can see that when* $l = 0$ *the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where* $l \neq 0$ *the potential is discontinous, resulting in the charecteristic shapes.*
+*Hydrogen potential varying* $l$*. We can see that when* $l = 0$ *the potential is the standard coulomb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where* $l \neq 0$ *the potential is discontinuous, resulting in the characteristic shapes.*
 
 <img src="Images/l3d.png" width=500>
 
-*3D representation of the shape of the Hydrogen orbitals as* $l$ *is varied. We see the sperically symetric case of* $l=0$ *and the bilatteral symetry where* $l\neq0$.
+*3D representation of the shape of the Hydrogen orbitals as* $l$ *is varied. We see the spherically symmetric case of* $l=0$ *and the bilateral symmetry where* $l\neq0$.
 
 </div>
 
-Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
+Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behaviour is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
 
-If we now wgain plot the wavefucntions and probability density for the hydrogen atom, but this time for a range of l values, we can see how the position of the maxima changes as $l$ increases.
+If we now again plot the wavefunctions and probability density for the hydrogen atom, but this time for a range of l values, we can see how the position of the maxima changes as $l$ increases.
+
 
 
 <div align="center">
 
 <img src="Images/ls2.png" width=600>
 
-*Plot again shows the wavefunctions on the left and the probability dewnsities on the right. This time we plot a range of* $l$ *values for the hydrogen atom, we can see that as* $l$ *increases the position of the maxima moves further away from the nucleus. This is the result of the repulsive centrifugal potential that is added to the standard columb potential when* $l\neq 0$. *We can also see that the maximum possible* $l$ *value is dependant on the value of* $n$*, and is given by* $l_{\text{max}} = n-1$.
+*Plot again shows the wavefunctions on the left and the probability densities on the right. This time we plot a range of* $l$ *values for the hydrogen atom, we can see that as* $l$ *increases the position of the maxima moves further away from the nucleus. This is the result of the repulsive centrifugal potential that is added to the standard coulomb potential when* $l\neq 0$. *We can also see that the maximum possible* $l$ *value is dependent on the value of* $n$* and is given by* $l_{\text{max}} = n-1$.
 
 </div>
 
@@ -529,17 +531,14 @@ To be updated.
 *Analytical wavefunctions for the Quantum Harmonic Oscillator generated. Abriged to the first 15 terms due to GitHub's column width. Full 100 terms available at [Full Reference Table](https://github.com/Adillwma/QuantumHarmonics/blob/main/QHO_Wavefunctions_Analytical_Reference_Table_Adill_Al-Ashgar.md)*
 </div>
 
-
-
-
-# License
-This project is not currently licensed. For more information please get in touch via the contact details below.
+# Acknowledgements
+Many thanks to Prof. Sandu Popescu, FRS, for many inspiring and enlightening lectures. 
 
 # Contributing
 Contributions to this codebase are welcome! If you encounter any issues, bugs or have suggestions for improvements please open an issue or a pull request on the [GitHub repository](https://github.com/Adillwma/QuantumHarmonics).
 
-# Contact
-[adill@neuralworkx.com](mailto:adill@neuralworkx.com).
+# License
+This project is not currently licensed. For more information please get in touch via the contact details below.
 
-# Acknowledgements
-Prof. Sandu Popescu, FRS, for many inspiring and enlightening lectures. 
+# Contact
+For any queries related to this project feel free to get in touch with me via email at [adill@neuralworkx.com](mailto:adill@neuralworkx.com).
