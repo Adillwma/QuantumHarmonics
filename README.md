@@ -106,7 +106,7 @@ It is hard to get an idea of what these wavefunctions look like from the above t
 
 <div align="center">
 
-<img src="Images/wfa.png" width=600>
+<img src="Images/wfa.png" width=400>
 
 *The first three analytically solved wavefunctions for the Quantum Harmonic Oscillator plotted against position*
 
@@ -116,7 +116,7 @@ It is hard to get an idea of what these wavefunctions look like from the above t
 ## Simulation 
 
 ### Methodology
-We will now attempt to calulate the eigenvalues and eigenvectors of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
+We will now attempt to calulate the energy levels and wavefunctions of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
 
 The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
 
@@ -147,7 +147,7 @@ where $\omega$ is the angular frequency of the oscillator. We can see that it is
 
 <div align="center">
 
-<img src="Images/QHOpotential.png" width=600>
+<img src="Images/QHOpotential.png" width=400>
 
 *The potential $V$ for the Quantum Harmonic Oscillator shown as a function of $x$, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to $ +\infty $ in its limits.*
 
@@ -228,7 +228,7 @@ We can also compare our numerically computed wavefucntions to their analytical c
 
 <img src="Images/output5.png" width=1000>
 
-*QHO  Analytical to simulation wavefucn and prob density comparisons*
+*Comparison between the first four simulated and analytically derived QHO wavefunctions and probability densitys. Although there is a phase mismatch to one of the wavefucntions this is not an issue and we find agreement between all the probability distributions.*
 
 </div>
 
@@ -240,13 +240,12 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <div align="center">
 
-<img src="Images/output21.png" width=800>
+<img src="Images/output21.png" width=700>
 
-*Caption*
+*The left hand plots in blue show the simulated wavefunctions for the QHO corresponding values of $n$ from 1-9 with $l=0$. The right hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to $n$ and the number of turning points is $2n+1$*
 
 </div>
 
-the probability density, which is given by $\psi^2$, and indicates the probability to find the particle at position $x$.
 
 
 
@@ -336,7 +335,7 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 
 <div align="center">
 
-<img src="Images/output56.png" width=600>
+<img src="Images/output56.png" width=500>
 
 *The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
 
@@ -402,14 +401,6 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 
 
 
-<div align="center">
-
-<img src="Images/output19.png" width=1200>
-
-*Caption*
-</div>
-
-
 ### Wavefunctions
 
 <div align="center">
@@ -420,11 +411,7 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 
 </div>
 
-
-
-
-
-
+We can see from our findings that the proabability densitys correctly predict what we observe in the real world, which is that electrons with higher energy will be found further from the nucleus, The peak of the probability density is the most likely place to find the electron, and this correspond to the classically predicted radius. However, There is also a probability of a higher energy electron being found closer to the nucleus than predicted by classical physics (or further away). This is a result of the wave nature of the electron, and is a key feature of quantum mechanics.
 
 
 ## Combined Visulisation for Hydrogen Atom at $l = 0$
@@ -433,7 +420,7 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 
 <div align="center">
 
-<img src="Images/output18.png" width=800>
+<img src="Images/output18.png" width=600>
 
 *The plot shows the simulated probability density corresponding to the wavefunctions for $n = 1$ through to $n=5$ overlayed upon the potential. Each probability density is plotted at corresponding energy level $E_n$ calulated through the simulation.*
 
@@ -444,7 +431,7 @@ We can get an idea of how the probability density manifests by adding some persp
 
 <div align="center">
 
-<img src="Images/output17.png" width=800>
+<img src="Images/output17.png" width=600>
 
 *Same plot as above with the added guides marking out the local maxima*
 
@@ -459,9 +446,13 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 <div align="center">
 
-<img src="Images/output14.png" width=800>
+<img src="Images/n2dscaled.png" width=800>
 
-*We can expand our soloution to 2D in this case where $l = 0$ as it is perfectly spherically symetrical.*
+<img src="Images/n2d.png" width=800>
+
+
+
+*We can expand our soloution to 2D in this case where $l = 0$ as it is perfectly spherically symetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visulise how the range over which the probability density extends grows as $n$ is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing $n$*
 
 </div>
 
