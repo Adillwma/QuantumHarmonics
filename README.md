@@ -52,7 +52,7 @@ here $\hbar$ is the reduced Planck constant, $m$ is the mass of the system and $
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
-The Quantum Harmonic Oscillator (QHO) is a fundamental concept in quantum mechanics, serving as an analogue to the classical harmonic oscillator. The classical harmonic oscillator represents a system with a quadratic potential, oscillating about an equilibrium position, such as a vibrating diatomic molecule or pendulum, the QHO extends this understanding into the quantum realm. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
+The Quantum Harmonic Oscillator (QHO) is a fundamental concept in quantum mechanics, serving as an analogue to the classical harmonic oscillator. The classical harmonic oscillator represents a system with a quadratic potential, oscillating about an equilibrium position, such as a vibrating diatomic molecule or pendulum, the QHO extends this understanding into the quantum realm. The QHO is a good example to begin building our simulation since it has exact analytic solutions we can use to validate our results.
 
 For the quantum harmonic oscillator, the potential $V$ is,
 
@@ -60,7 +60,7 @@ $$
 V(x) = \frac{1}{2}m \omega^2 x^2   \tag{6}
 $$
 
-where $\omega$ is the angular frequency of the oscillator. We can see that it is a quadritic potential, following the form of the classical harmonic oscillator, with $k$ the spring constant being equal to $m \omega^2$.
+where $\omega$ is the angular frequency of the oscillator. We can see that it is a quadratic potential, following the form of the classical harmonic oscillator, with $k$ the spring constant being equal to $m \omega^2$.
 
 
 
@@ -83,7 +83,7 @@ $$
 
 **where $n$ is a non-negative integer representing the primary quantum number** of the energy level, $\hbar$ is the reduced Planck constant, and $\omega$ is the angular frequency of the oscillator. 
 
-This equation represents the **quantization** of energy levels in the QHO. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the QHO, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels and the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
+This equation represents the **quantization** of energy levels in the QHO. Quantisation is a core idea of Quantum Mechanics (hence the name). In the case of the QHO, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels and the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
 
 
 <div align="center">
@@ -99,7 +99,7 @@ This equation represents the **quantization** of energy levels in the QHO. Quant
 | 7   | $6\frac{1}{2}ℏ𝜔$ | 13                |
 | ... | ...              | ...               |
 
-*The table shows the first seven analytically derived energy states for the Quantum Harmonic Osciallator, we see that when the energy is expressed in terms of* $\frac{1}{2}ℏ𝜔$ *the energy levels are simply odd integers given by* $2n + 1$*.*
+*The table shows the first seven analytically derived energy states for the Quantum Harmonic Oscillator, we see that when the energy is expressed in terms of* $\frac{1}{2}ℏ𝜔$ *the energy levels are simply odd integers given by* $2n + 1$*.*
 
 </div>
 
@@ -132,7 +132,7 @@ Solving for the first three wavefunctions we get the following:
 
 </div>
 
-It is hard to get an idea of what these wavefunctions look like from the above table, but if we now plot the wavefunctions against the displacement in $x$ we get a much clearer view of thier shape and how that changes with the energy level.
+It is hard to get an idea of what these wavefunctions look like from the above table, but if we now plot the wavefunctions against the displacement in $x$ we get a much clearer view of their shape and how that changes with the energy level.
 
 <div align="center">
 
@@ -146,9 +146,9 @@ It is hard to get an idea of what these wavefunctions look like from the above t
 ## Simulation 
 
 ### Methodology
-We will now attempt to calulate the energy levels and wavefunctions of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
+We will now attempt to calculate the energy levels and wavefunctions of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
 
-In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
+To find a numerical solution, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
 
 In order to define the matrix $\hat{H}$, we can use a discrete approximation of the 2nd derivative,
 
@@ -176,17 +176,17 @@ $$
 
 The potential term can be represented by a matrix where the leading diagonal is the potential evaluated at the $i$-th point in space, $V_{i,i} = V(x_i)$, and all other entries are zero. 
 
-Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectivly. For performance reasons we currently use the scipy.linalg.eigh_tridiagonal function, benefiting from its tailored functionality for diagonal and tridiagonal matrices. This is dicussed further in [Appendix Section 2.2](#Appendix_performance).
+Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectively. For performance reasons we currently use the scipy.linalg.eigh_tridiagonal function, benefiting from its tailored functionality for diagonal and tridiagonal matrices. This is discussed further in [Appendix Section 2.2](#Appendix_performance).
 
 ##### NOTE:
-It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additonally the x displacement (from which follows the range for the potential) must cover sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
+It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additionally the x range (from which follows the range for the potential) must cover sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
 
 
 ### Energy Levels
 
 We compare the computed eigenvalues with the expected eigenvalues.
 
-Looking back on our table of analytical values for the energy levels, and filling in our simulated values we can see we get a good match between the two, with the error gradlly increasing as the energy level increases. This is to be expected as the wavefunctions become more complex and the numerical solutions become less stable. 
+Looking back on our table of analytical values for the energy levels and filling in our simulated values we can see we get a good match between the two, with the error gradually increasing as the energy level increases. This is to be expected as the wavefunctions become more complex and the numerical solutions become less stable. 
 
 <div align="center">
 
@@ -205,39 +205,39 @@ Looking back on our table of analytical values for the energy levels, and fillin
 
 </div>
 
-To get a better idea of the error we can plot it as a function of n, the results show good agreement between simulation and anylitical results, a full exploration of the error as a function of the input parameters is given in [Appendix Section 2.1](#Appendix_stability). 
+To get a better idea of the error we can plot it as a function of n, the results show good agreement between simulation and analytical results, a full exploration of the error as a function of the input parameters is given in [Appendix Section 2.1](#Appendix_stability). 
 
 <div align="center">
 
 <img src="Images/outputt.png" width=1000>
 
-*The left hand plot shows the results for the first 100 energy lavels of our simulation compared to the analytical results shown in red. The plot on the right shows both the absoloute error (shown in green and referenced to the left y-axis) and the reletive error as a percentage of the true value (shown in yellow and referneced to the right hand y-axis.)*
+*The left-hand plot shows the results for the first 100 energy levels of our simulation compared to the analytical results shown in red. The plot on the right shows both the absolute error (shown in green and referenced to the left y-axis) and the relative error as a percentage of the true value (shown in yellow and reference to the right hand y-axis.)*
 
 </div>
 
 ### Wavefunctions
-We can also compare our numerically computed wavefucntions to their analytical counterparts to check that our simulation is working as expected. 
+We can also compare our numerically computed wavefunctions to their analytical counterparts to check that our simulation is working as expected. 
 
 
 <div align="center">
 
 <img src="Images/output5.png" width=1000>
 
-*Comparison between the first four simulated and analytically derived QHO wavefunctions and probability densitys. Although there is a phase mismatch to one of the wavefucntions this is not an issue and we find agreement between all the probability distributions.*
+*Comparison between the first four simulated and analytically derived QHO wavefunctions and probability densities. Although there is a phase mismatch to one of the wavefunctions, we find agreement between all the probability distributions.*
 
 </div>
 
 
-In this visual comparison we can see that the wavefunctions are in good agreement with the analytical solutions, with the only difference being a phase factor in one of the waves. This is to be expected as the phase is not a physical observable and is therefore not unique. This phase shift does not effect the probability density, which we find to be in good agreement with the analytical solutions. This is quantified further in [Appendix Section 2.1](#Appendix_stability).
+In this visual comparison we can see that the wavefunctions are in good agreement with the analytical solutions, with the only difference being a phase factor in one of the waves. This is to be expected as the phase is not a physical observable and is therefore not unique. This phase shift does not affect the probability density, which we find to be in good agreement with the analytical solutions. This is quantified further in [Appendix Section 2.1](#Appendix_stability).
 
 
-Now we have verified our simulation works as expected, we can move on to visulising the wavefunctions and probability density of the QHO in more detail.
+Now we have verified our simulation works as expected, we can move on to visualising the wavefunctions and probability density of the QHO in more detail.
 
 <div align="center">
 
 <img src="Images/output21.png" width=700>
 
-*The left hand plots in blue show the simulated wavefunctions for the QHO corresponding values of* $n$ *from 1-9 with* $l=0$*. The right hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to* $n$ *and the number of turning points is* $2n+1$*.*
+*The left-hand plots in blue show the simulated wavefunctions for the QHO corresponding values of* $n$ *from 1-9 with* $l=0$*. The right-hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to* $n$ *and the number of turning points is* $2n+1$*.*
 
 </div>
 
@@ -246,15 +246,15 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 
 
-## Combined Visulisation for QHO
+## Combined Visualisation for QHO
 
-Putting together the results and visulisations generated so far we can see the relationship between the potential, and the probability density of the QHO. Each probability density is plotted at the energy given by its corresponding energy level eigenvalue. We see how the potential forms a well in which the wavefunctions/probability densities are confined, classically this potential is an absoloute limit, however we can see that the probility densities extend beyond this point, this is a key feature of quantum mechanics, and is a result of the wave-like nature of the electron. 
+Putting together the results and visualisations generated so far, we can see the relationship between the potential and the probability density of the QHO. Each probability density is plotted at the energy given by its corresponding energy level eigenvalue. We see how the potential forms a well in which the wavefunctions/probability densities are confined, classically this potential is an absolute limit, however we can see that the probability densities extend beyond this point, this is a key feature of quantum mechanics, and is a result of the wave-like nature of the electron. 
 
 <div align="center">
 
 <img src="Images/output7.png" width=1000>
 
-*The dotted u shape line shows the potential, the left hand plot shows the simulated wavefunctions, plotted at the energy corresponding to thier energy eigenvalue. The right hand plot shows the same but with the probability dfensities rather than wavefunctions. Classically the probability of existing outside of the potential limits is not allowed, this is one of the dissagremments between classical and quantum theory.*
+*The dotted u shape line shows the potential, the left-hand plot shows the simulated wavefunctions, plotted at the energy corresponding to their energy eigenvalue. The right-hand plot shows the same but with the probability densities rather than wavefunctions. Classically the probability of existing outside of the potential limits is not allowed, this is one of the disagreements between classical and quantum theory.*
 
 </div>
 
