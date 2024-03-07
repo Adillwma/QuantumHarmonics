@@ -406,7 +406,7 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 
 <img src="Images/outpuit.png" width=600>
 
-*The left hand plots show the first 9 simulated wavefucntions,* $\psi$*, for the hydrogen atom with* $l = 0$*, to the right hand side are the corresponding probability densities,* $\psi^2$*. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
+*The left hand plots show the first 9 simulated wavefucntions,* $\psi$*, for the hydrogen atom with* $l = 0$*, to the right hand side are the corresponding probability densities,* $|\psi|^2$*. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as* $n$ *increases causing the maximum amplitude to decrease.*
 
 </div>
 
@@ -425,21 +425,18 @@ We can see from our findings that the proabability densitys correctly predict wh
 
 </div>
 
-We can get an idea of how the probability density manifests by adding some perspective shifted circles onto our plot to indicate the maxima of the probability density. These are mereley a guide to the eye. It is important to note these just highlight the local maximas, the probability density is a continuous function and is not limited to these points, i.e. there are not thin shells of probability density at these points, but rather the probability density a local maxima at these points. 
+We can get an idea of how the probability density manifests by adding some perspective shifted circles onto our plot to indicate the maxima of the probability density. It is important to note these are mereley a guide to the eye, to highlight the local maximas, the probability density is a continuous function and is not limited to these circled radii.
 
 
 <div align="center">
 
 <img src="Images/output17.png" width=600>
 
-*Same plot as above with the added guides marking out the local maxima*
+*Same plot as shown above with the added guides marking out the local maxima for each probability density.*
 
 </div>
 
 The energy scale describes the required energy to move the electron from its bound state to infinity, a simpler way to think of it is the sum total energy of the nucleas and the electron is this much lower (hence the negative) than if they were seperated by an infinite distance
-
-In addition to the quantized negative energy states of the hydrogen atom, there is also a continuum of unbound positive energy states. 
-
 
 So far we have been calculating in one dimension, but the hydrogen atom is a three-dimensional system. Fortunatly, in the $l = 0$ case, the wavefunctions are spherically symmetric, so we can extend our 1D results to 2D and 3D by simply squaring the wavefunction to get the probability density, and then plotting the probability density as a function of the radial distance from the nucleus.
 
@@ -464,14 +461,6 @@ If we retrun to our hydrogen potential, given by equation 14, and change the val
 
 When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential for electrostsatic interaction between the electron and the nucleus. This is the case we explored in the previous section, and the potential, wavefunctions and the probability density are all spherically symmetric, as demonstrated. For those familliar with the orbital shell model, this corresponds to the s orbital.
 
-<div align="center">
-
-<img src="Images/output56.png" width=500>
-
-*The potential for Hydrogen when the value of quantum number* $l$ *is zero. This is effectivly the electrostatic Columb potential. The potential for* $l=0$ *is continuous, going to* $ -\infty $ *in its limit, resulting in a spherically symetrical potential*
-
-</div>
-
 For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an additional repulsive component to the potential. As $l$ increases, this repulsive centrifugal potential becomes stronger. This reflects the fact that electrons in higher angular momentum states experience a stronger "centrifugal force" due to their higher orbital angular momentum. This is how we get our different orbital shapes, p, d, f, etc.
 
 
@@ -479,11 +468,11 @@ For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an ad
 
 <img src="Images/outputcc.png" width=500>
 
-*Hydrogen potential varying* $l$*. We can see that when* $l = 0$* the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where* $l \neq 0$ *the potential is discontinous, resulting in the charecteristic shapes.*
+*Hydrogen potential varying* $l$*. We can see that when* $l = 0$ *the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where* $l \neq 0$ *the potential is discontinous, resulting in the charecteristic shapes.*
 
 <img src="Images/l3d.png" width=500>
 
-*3D representation of the shape of the Hydrogen orbitals as* $l$ *is varied. We see the sperically symetric case of* $l=0$ *and the bilatteral symetry where* $ l \neq 0$*.*
+*3D representation of the shape of the Hydrogen orbitals as* $l$ *is varied. We see the sperically symetric case of* $l=0$ *and the bilatteral symetry where* $l\neq0$.
 
 </div>
 
@@ -496,7 +485,7 @@ If we now wgain plot the wavefucntions and probability density for the hydrogen 
 
 <img src="Images/ls2.png" width=600>
 
-*Plot again shows the wavefunctions on the left and theprobability dewnsities on the right. This time we plot a range of l values for the hydrogen atom, we can see that as* $l$ *increases the position of the maxima moves further away from the nucleus. This is the result of the repulsive centrifugal potential that is added to the standard columb potential when* $l \neq 0$*.* We can also see that the maximum possible* $l$ *value is dependant on the value of* $n$*, and is given by* $l_{\text{max}} = n-1$*.*
+*Plot again shows the wavefunctions on the left and the probability dewnsities on the right. This time we plot a range of* $l$ *values for the hydrogen atom, we can see that as* $l$ *increases the position of the maxima moves further away from the nucleus. This is the result of the repulsive centrifugal potential that is added to the standard columb potential when* $l\neq 0$. *We can also see that the maximum possible* $l$ *value is dependant on the value of* $n$*, and is given by* $l_{\text{max}} = n-1$.
 
 </div>
 
