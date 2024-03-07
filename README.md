@@ -36,7 +36,7 @@
 # Introduction
 Our current best understanding of the most fundamental aspects of our universe come from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation that governs the behaviour of non-reletivistic quantum systems. Solving a form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' in the position basis reveals the quantized energy levels and spatial distribution of a quantum system. The TISE solves for the **stationary states** and is often used to solve for systems where the potential is constant over time. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically for various quantum systems and visualize the results. A comparison is made to some well understood examples that have exact analytical solutions in order to validate the numerical results and quantify our accuracy. We will specifically be solving for the **Energy Levels** and **Wavefunctions**, the latter of which will be used to calculate the **Probability Density** of the systems spatial distribution.
 
-The energy levels $E_n$ and the wavefunctions $\psi$ of a non-reletivestic quantum system can be calculated from the **eigenvalues** and **eigenvectors** of the Schrödinger equation. The time-independent Schrödinger equation in 1D can be written,
+The energy levels $E_n$ and the wavefunctions $\psi$ of a non-reletivistic quantum system can be calculated from the **eigenvalues** and **eigenvectors** of the Schrödinger equation. The TISE equation in 1D can be written,
 
 $$
 \hat{H} \psi = \hat{E} \psi \tag{4} 
@@ -52,7 +52,7 @@ here $\hbar$ is the reduced Planck constant, $m$ is the mass of the system and $
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
-The Quantum Harmonic Oscillator (QHO) is a fundamental concept in quantum mechanics, serving as an analogue to the classical harmonic oscillator. While the classical harmonic oscillator represents a system with a quadratic potential oscillating about an equilibrium position, such as a vibrating diatomic molecule or an oscillating pendulum, the QHO extends this understanding into the quantum realm. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
+The Quantum Harmonic Oscillator (QHO) is a fundamental concept in quantum mechanics, serving as an analogue to the classical harmonic oscillator. The classical harmonic oscillator represents a system with a quadratic potential, oscillating about an equilibrium position, such as a vibrating diatomic molecule or pendulum, the QHO extends this understanding into the quantum realm. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
 For the quantum harmonic oscillator, the potential $V$ is,
 
@@ -68,7 +68,7 @@ where $\omega$ is the angular frequency of the oscillator. We can see that it is
 
 <img src="Images/QHOpotential.png" width=400>
 
-*The potential* $V$ *for the Quantum Harmonic Oscillator shown as a function of* $x$*, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to* $+\infty$ *in its limits.*
+*The potential* $V$ *for the Quantum Harmonic Oscillator shown as a function of* $x$*, we can see that it is quadratic, which is the defining feature of the QHO. The potential is continuous and goes to* $+\infty$ *in its limits.*
 
 </div>
 
@@ -81,15 +81,15 @@ $$
 E_n = \hbar \omega (n + \frac{1}{2})  \tag{1}
 $$
 
-where $n$ is a non-negative integer representing the primary quantum number of the energy level, $\hbar$ is the reduced Planck constant, and $\omega$ is the angular frequency of the oscillator. 
+**where $n$ is a non-negative integer representing the primary quantum number** of the energy level, $\hbar$ is the reduced Planck constant, and $\omega$ is the angular frequency of the oscillator. 
 
-This equation represents the **quantization** of energy levels in the QHO. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the QHO, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels, so the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
+This equation represents the **quantization** of energy levels in the QHO. Quantisation is an core idea of Quantum Mechanics (hence the name). In the case of the QHO, each energy level is equally spaced, with a separation of $\hbar \omega$ between adjacent levels and the eigenvalues are simply $n + \frac{1}{2}$. Given we are expressing energy in terms of $\frac{1}{2} \hbar \omega$, the energy levels simplify to odd integers given by $2n + 1$.
 
 
 <div align="center">
 
-| n   | Analytical Result         | In terms of $\frac{1}{2}ℏ𝜔$ |
-|-----|----------------|-------------------|
+| n   | Analytical Result | In terms of $\frac{1}{2}ℏ𝜔$ |
+|-----|------------------|-------------------|
 | 1   | $\frac{1}{2}ℏ𝜔$  | 1                 |
 | 2   | $1\frac{1}{2}ℏ𝜔$ | 3                 |
 | 3   | $2\frac{1}{2}ℏ𝜔$ | 5                 |
@@ -97,7 +97,7 @@ This equation represents the **quantization** of energy levels in the QHO. Quant
 | 5   | $4\frac{1}{2}ℏ𝜔$ | 9                 |
 | 6   | $5\frac{1}{2}ℏ𝜔$ | 11                |
 | 7   | $6\frac{1}{2}ℏ𝜔$ | 13                |
-| ... | ...            | ...               |
+| ... | ...              | ...               |
 
 *The table shows the first seven analytically derived energy states for the Quantum Harmonic Osciallator, we see that when the energy is expressed in terms of* $\frac{1}{2}ℏ𝜔$ *the energy levels are simply odd integers given by* $2n + 1$*.*
 
@@ -237,7 +237,7 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <img src="Images/output21.png" width=700>
 
-*The left hand plots in blue show the simulated wavefunctions for the QHO corresponding values of* $n$ *from 1-9 with* $l=0$*. The right hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to $n$ and the number of turning points is* $2n+1$*.*
+*The left hand plots in blue show the simulated wavefunctions for the QHO corresponding values of* $n$ *from 1-9 with* $l=0$*. The right hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to* $n$ *and the number of turning points is* $2n+1$*.*
 
 </div>
 
@@ -248,11 +248,13 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 ## Combined Visulisation for QHO
 
+Putting together the results and visulisations generated so far we can see the relationship between the potential, and the probability density of the QHO. Each probability density is plotted at the energy given by its corresponding energy level eigenvalue. We see how the potential forms a well in which the wavefunctions/probability densities are confined, classically this potential is an absoloute limit, however we can see that the probility densities extend beyond this point, this is a key feature of quantum mechanics, and is a result of the wave-like nature of the electron. 
+
 <div align="center">
 
 <img src="Images/output7.png" width=1000>
 
-*The dotted u shape line shows the potential that we caluclated, combining the potential and the wavefunctions on this one plot allows us to see the classical limits, where the potential crosses each wavefunction. Classically the wavefucntion is not allowed to have a value other than 0 past these limits but we can see here that it does, this is one of the dissagremments between classical and quantum theory.*
+*The dotted u shape line shows the potential, the left hand plot shows the simulated wavefunctions, plotted at the energy corresponding to thier energy eigenvalue. The right hand plot shows the same but with the probability dfensities rather than wavefunctions. Classically the probability of existing outside of the potential limits is not allowed, this is one of the dissagremments between classical and quantum theory.*
 
 </div>
 
