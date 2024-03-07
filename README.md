@@ -34,24 +34,21 @@
 - [Liscence](#Liscence)
 
 # Introduction
-Our best current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of non-reletivistic quantum systems. A form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' which, if solved in the position basis, reveals the quantized energy levels and spatial distribution of a quantum system. The TISE solves for the **stationary states** and is often used to solve for systems where the potential is constant over time. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically for various quantum systems and visualize the results. A comparison is made to some well understood examples that have exact analytical solutions in order to validate the numerical results and quantify our accuracy. We will specifically be solving for the **Energy Levels** and **Wavefunctions**, the latter of which will be used to calculate the **Probability Density** of the systems spatial distribution.
+Our current best understanding of the most fundamental aspects of our universe come from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation that governs the behaviour of non-reletivistic quantum systems. Solving a form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' in the position basis reveals the quantized energy levels and spatial distribution of a quantum system. The TISE solves for the **stationary states** and is often used to solve for systems where the potential is constant over time. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically for various quantum systems and visualize the results. A comparison is made to some well understood examples that have exact analytical solutions in order to validate the numerical results and quantify our accuracy. We will specifically be solving for the **Energy Levels** and **Wavefunctions**, the latter of which will be used to calculate the **Probability Density** of the systems spatial distribution.
 
-The energy levels $E_n$, and the wavefunctions $\psi$ of a non-reletivestic quantum system can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
+The energy levels $E_n$ and the wavefunctions $\psi$ of a non-reletivestic quantum system can be calculated from the **eigenvalues** and **eigenvectors** of the Schrödinger equation. The time-independent Schrödinger equation in 1D can be written,
 
 $$
 \hat{H} \psi = \hat{E} \psi \tag{4} 
 $$
 
-The Hamiltonian operator $\hat{H}$ is given by 
+where $\hat{E}$ is the energy operator and the Hamiltonian operator $\hat{H}$ is given by,
 
 $$
 \hat{H} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{5}
 $$
 
-Where:
-- $\hbar$ is the reduced Planck constant.
-- $m$ is the mass of the oscillator.
-- $V$ is the potential energy.
+where $\hbar$ is the reduced Planck constant, $m$ is the mass of the system and $V$ is the potential energy. The Hamiltonian operator is a sum of the kinetic energy operator and the potential energy operator. The kinetic energy operator is given by the second derivative of the wavefunction with respect to position, and the potential energy operator is a function of position. The eigenvalues of the Hamiltonian operator are the energy levels of the system, and the eigenvectors are the wavefunctions. The probability density of the system is given by the absolute square of the wavefunction, $|\psi|^2$.
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
