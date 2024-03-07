@@ -21,31 +21,64 @@
   - [Analytical Solution](#Analytical-Solution-1)
   - [Simulation](#Simulation-1)
   - [Combined Visulisation for Hydrogen Atom](#Combined-Visulisation-for-Hydrogen-Atom)
-- [Part 3 - The Hydrogen Atom with $l\neq 0$](#Part-3---The-Hydrogen-Atom-with-$l-\neq-0$)
+- [Part 3 - The Hydrogen Atom with l > 0](#Part-3---The-Hydrogen-Atom-with-$l-\neq-0$)
   - [Simulation](#Simulation-2)
   - [Combined Visulisations](#Combined-Visulisation-for-Hydrogen-Atom-at-$l-\neq-0$)
-- [References](#References)
 - [Appendix](#Appendix)
   - [Stability](#Stability)
   - [Performance](#Performance)
   - [QHO Analytical Wavefunction Reference Table](#QHO-Analytical-Wavefunction-Reference-Table)
-- [Liscence](#Liscence)
 - [Contributing](#Contributing)
 - [Contact](#Contact)
 - [Acknowledgements](#Acknowledgements)
+- [Liscence](#Liscence)
 
 # Introduction
-Our current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of non-reletivistic quantum systems. A form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' solves for the stationary states which reveal the quantized energy levels and spatial distribution of a quantum system. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically for various quantum systems and visualize the results. A comparison is made to some well understood examples that have exact analytical solutions in order to validate the numerical results and quantify our accuracy. We will specifically be solving for the **Energy Levels** and **Wavefunctions**, the latter of which will be used to calculate the probability density of the system.
+Our best current understanding of the most fundamental aspects of our universe comes from Quantum Mechanics. Central to this framework is the Schrödinger equation, a core equation in quantum mechanics that governs the behaviour of non-reletivistic quantum systems. A form of this equation known as the Time-Independent Schrödinger Equation or 'TISE' solves for the stationary states, which if solved in the position basis, reveals the quantized energy levels and spatial distribution of a quantum system. The TISE is often used to solve for systems where the potential is constant over time. Analytical solutions are often infeasible for complex systems, necessitating numerical techniques. This project is designed to solve the TISE numerically for various quantum systems and visualize the results. A comparison is made to some well understood examples that have exact analytical solutions in order to validate the numerical results and quantify our accuracy. We will specifically be solving for the **Energy Levels** and **Wavefunctions**, the latter of which will be used to calculate the **Probability Density** of the systems spatial distribution.
+
+The energy levels $E_n$, and the wavefunctions $\psi$ of a non-reletivestic quantum system can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
+
+$$
+\hat{H} \psi = \hat{E} \psi \tag{4} 
+$$
+
+The Hamiltonian operator $\hat{H}$ is given by 
+
+$$
+\hat{H} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{5}
+$$
+
+Where:
+- $\hbar$ is the reduced Planck constant.
+- $m$ is the mass of the oscillator.
+- $V$ is the potential energy.
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
-The Quantum Harmonic-Oscillator (QHO) is a quantum mechanical analogue of the classical harmonic oscillator, a system that oscillates about an equilibrium position, such as a vibrating diatomic molecule. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
+The Quantum Harmonic Oscillator (QHO) is a fundamental concept in quantum mechanics, serving as an analogue to the classical harmonic oscillator. While the classical harmonic oscillator represents a system with a quadratic potential oscillating about an equilibrium position, such as a vibrating diatomic molecule or an oscillating pendulum, the QHO extends this understanding into the quantum realm. The QHO is a good example to begin building our simulation, since it has exact analytic solutions we can use to validate our simulations results.
 
+For the quantum harmonic oscillator, the potential $V$ is,
+
+$$
+V(x) = \frac{1}{2}m \omega^2 x^2   \tag{6}
+$$
+
+where $\omega$ is the angular frequency of the oscillator. We can see that it is a quadritic potential, following the form of the classical harmonic oscillator, with $k$ the spring constant being equal to $m \omega^2$.
+
+
+
+<div align="center">
+
+<img src="Images/QHOpotential.png" width=400>
+
+*The potential $V$ for the Quantum Harmonic Oscillator shown as a function of $x$, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to $ +\infty $ in its limits.*
+
+</div>
 
 ## Analytical Solution
 
 ### Energy Levels
-Analytically the **Energy Levels**, $E_n$, of the QHO are given by :
+When solved analytically the **Energy Levels**, $E_n$, of the QHO are given by :
 
 $$
 E_n = \hbar \omega (n + \frac{1}{2})  \tag{1}
@@ -117,41 +150,6 @@ It is hard to get an idea of what these wavefunctions look like from the above t
 
 ### Methodology
 We will now attempt to calulate the energy levels and wavefunctions of the same QHO system, this time by solving the TISE using numerical methods. We can then compare the results to the exact analytical solutions shown above to validate our methodology.
-
-The energy levels $E_n$, and the wavefunctions $\psi$ of the quantum harmonic oscillator can be calculated from the eigenvalues and eigenvectors of the Schrödinger equation for a one-dimensional harmonic oscillator potential. The time-independent Schrödinger equation in 1D can be written,
-
-$$
-\hat{H} \psi = \hat{E} \psi \tag{4} 
-$$
-
-The Hamiltonian operator $\hat{H}$ is given by 
-
-$$
-\hat{H} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{5}
-$$
-
-Where:
-- $\hbar$ is the reduced Planck constant.
-- $m$ is the mass of the oscillator.
-- $V$ is the potential energy.
-
-For the quantum harmonic oscillator, the potential $V$ is,
-
-$$
-V(x) = \frac{1}{2}m \omega^2 x^2   \tag{6}
-$$
-
-where $\omega$ is the angular frequency of the oscillator. We can see that it is a quadritic potential, following the form of the classical harmonic oscillator, with $k$ the spring constant being equal to $m \omega^2$.
-
-
-
-<div align="center">
-
-<img src="Images/QHOpotential.png" width=400>
-
-*The potential $V$ for the Quantum Harmonic Oscillator shown as a function of $x$, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to $ +\infty $ in its limits.*
-
-</div>
 
 In order to find numerical solutions, we can divide the spatial dimension into $N$ discrete points, $x_i$, and evaluate $\psi$ at each one.  Given this, equation 3 becomes a matrix equation, with $\psi$ an $N$-dimensional vector, and $H$ an $(N \times N)$ matrix.  We can then find the eigenvalues and eigenfunctions of the equation using numerical methods.
 
@@ -289,7 +287,7 @@ $$
 
 ## Analytical Solution
 
-</div>
+
 
 ### Energy Levels
 
