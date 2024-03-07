@@ -330,7 +330,7 @@ $$
 
 This potential is the sum of the classical attractive Coulomb interaction between the electron and the nucleus, and an additional term dependent on the **azimuthal quantum number** $l$. This term is related to the centrifugal potential, which arises due to the angular momentum of the electron. 
 
-Iniitally we will focus only on this case where $ l = 0 $, and then later we will explore the effects of changing $ l $.
+Initially we will focus only on this case where $l=0$, and then later we will explore the effects of changing $l$.
 
 <div align="center">
 
@@ -342,7 +342,7 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 
 We can now use the same method as outlined in [Part 1](#Part-1---The-Quantum-Harmonic-Oscillator) to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
 
-##### *NOTE: We must use a range of $r$ such that the wavefunction become negligible, and a large number of $r$ points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).*
+##### *NOTE: We must use a range of* $r$ *such that the wavefunction become negligible, and a large number of* $r$ *points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).*
 
 
 ### Energy Levels
@@ -373,6 +373,7 @@ To convert our dimensionless results given in terms of $\frac{m_e e^4}{2 (4 \pi 
 - $\hbar$: reduced Planck constant $\approx 1.055 \times 10^{-34}$ J·s
 
 Which yeilds :
+
 $$
 \frac{(9.109 \times 10^{-31}) \times (1.602 \times 10^{-19})^4}{2 \times (4 \pi \times 8.854 \times 10^{-12})^2 \times (1.055 \times 10^{-34})^2} \approx 13.606 \, \text{eV}  \tag{23}
 $$
