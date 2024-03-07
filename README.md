@@ -446,7 +446,7 @@ We can get an idea of how the probability density manifests by adding some persp
 
 <img src="Images/output17.png" width=800>
 
-*Caption*
+*Same plot as above with the added guides marking out the local maxima*
 
 </div>
 
@@ -461,7 +461,7 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 <img src="Images/output14.png" width=800>
 
-*Same plot as above with the added guides marking out the local maxima*
+*We can expand our soloution to 2D in this case where $l = 0$ as it is perfectly spherically symetrical.*
 
 </div>
 
@@ -472,13 +472,7 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 If we retrun to our hydrogen potential, given by equation 14, and change the value of $l$ we can see how the potential changes. If we analyse how the overall potential changes with respect to $l$ we end up with two distinct cases:
 
-When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential for electrostsatic interaction between the electron and the nucleus. This is the case we explored in the previous section, and the potential, wavefunctions and the probability density are all spherically symmetric, as demonstrated.
-   
-$$ 
-V(r) = -\frac{k \cdot e^2}{r} \tag{15} 
-$$
-
-For those familliar with the orbital shell model, this corresponds to the s orbital.
+When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\text{hyd}} = -2/r$, which in non-atomic units corresponds to the classical coulumb potential for electrostsatic interaction between the electron and the nucleus. This is the case we explored in the previous section, and the potential, wavefunctions and the probability density are all spherically symmetric, as demonstrated. For those familliar with the orbital shell model, this corresponds to the s orbital.
 
 <div align="center">
 
