@@ -448,7 +448,7 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 
 
-*We can expand our soloution to 2D in this case where* $l = 0$ *as it is perfectly spherically symetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visulise how the range over which the probability density extends grows as* $n$ *is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing* $n$*.*
+*We can expand our soloution to two dimensions in this case where* $l = 0$ *as it is perfectly spherically symetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visulise how the range over which the probability density extends grows as* $n$ *is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing* $n$*.*
 
 </div>
 
