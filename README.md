@@ -99,7 +99,7 @@ This equation represents the **quantization** of energy levels in the QHO. Quant
 | 7   | $6\frac{1}{2}ℏ𝜔$ | 13                |
 | ... | ...            | ...               |
 
-*The table shows the first seven analytically derived energy states for the Quantum Harmonic Osciallator, we see that when the energy is expressed in terms of $\frac{1}{2}ℏ𝜔$ the energy levels are simply odd integers given by $2n + 1$.*
+*The table shows the first seven analytically derived energy states for the Quantum Harmonic Osciallator, we see that when the energy is expressed in terms of* $\frac{1}{2}ℏ𝜔$ *the energy levels are simply odd integers given by* $2n + 1$*.*
 
 </div>
 
@@ -237,7 +237,7 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <img src="Images/output21.png" width=700>
 
-*The left hand plots in blue show the simulated wavefunctions for the QHO corresponding values of $n$ from 1-9 with $l=0$. The right hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to $n$ and the number of turning points is $2n+1$*
+*The left hand plots in blue show the simulated wavefunctions for the QHO corresponding values of* $n$ *from 1-9 with* $l=0$*. The right hand plots in red show the corresponding probability densities. We can see that the number of maxima in the probability density is equal to $n$ and the number of turning points is* $2n+1$*.*
 
 </div>
 
@@ -252,7 +252,7 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <img src="Images/output7.png" width=1000>
 
-*The dotted u shape line shows the potential that we caluclated, combining the potential and the wavefunctions on this one plot allows us to see the classical limits, where the potential crosses each wavefunction. Classically the wavefucntion is not allowed to have a value other than 0 past these limits (turning points) but we can see here that it does, this is one of the dissagremments between classical and quantum theory.*
+*The dotted u shape line shows the potential that we caluclated, combining the potential and the wavefunctions on this one plot allows us to see the classical limits, where the potential crosses each wavefunction. Classically the wavefucntion is not allowed to have a value other than 0 past these limits but we can see here that it does, this is one of the dissagremments between classical and quantum theory.*
 
 </div>
 
@@ -309,6 +309,8 @@ $$
 | 7   | $-\frac{1}{49} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204  | 
 | ... | ...                                                             | ...      | 
 
+*The table shows the first seven analytically derived energy states for the Hydrogen atom, we can see that the energy levels are a multiple of the ground state energy, -1.0000, as expected.*
+
 </div>
 
 
@@ -332,7 +334,7 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 
 <img src="Images/output56.png" width=500>
 
-*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
+*The potential for Hydrogen when the value of quantum number* $l$ *is zero. This is effectivly the electrostatic Columb potential. The potential for* $l=0$ *is continuous, going to* $-\infty$ *in its limit, resulting in a spherically symetrical potential*
 
 </div>
 
@@ -402,7 +404,7 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 
 <img src="Images/outpuit.png" width=600>
 
-*The left hand plots show the first 9 simulated wavefucntions, $\psi$, for the hydrogen atom with $l = 0$, to the right hand side are the corresponding probability densities, $\psi^2$. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
+*The left hand plots show the first 9 simulated wavefucntions,* $\psi$*, for the hydrogen atom with* $l = 0$*, to the right hand side are the corresponding probability densities,* $\psi^2$*. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
 
 </div>
 
@@ -417,7 +419,7 @@ We can see from our findings that the proabability densitys correctly predict wh
 
 <img src="Images/output18.png" width=600>
 
-*The plot shows the simulated probability density corresponding to the wavefunctions for $n = 1$ through to $n=5$ overlayed upon the potential. Each probability density is plotted at corresponding energy level $E_n$ calulated through the simulation.*
+*The plot shows the simulated probability density corresponding to the wavefunctions for* $n = 1$ *through to* $n=5$ *overlayed upon the potential. Each probability density is plotted at corresponding energy level* $E_n$ *calulated through the simulation.*
 
 </div>
 
@@ -447,7 +449,7 @@ So far we have been calculating in one dimension, but the hydrogen atom is a thr
 
 
 
-*We can expand our soloution to 2D in this case where $l = 0$ as it is perfectly spherically symetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visulise how the range over which the probability density extends grows as $n$ is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing $n$*
+*We can expand our soloution to 2D in this case where* $l = 0$ *as it is perfectly spherically symetrical. The image on top has the first ten probability densities plotted with a fixed x and y scale to visulise how the range over which the probability density extends grows as* $n$ *is increased. The image on the bottom shows us the same thing however with slightly scaled x and y axes to make it easier to identify the number of maxima in the probability density and how that grows with increasing* $n$*.*
 
 </div>
 
@@ -464,7 +466,7 @@ When $l = 0$, the term $l(l+1)/r^2$ vanishes, and the potential reduces to $V_{\
 
 <img src="Images/output56.png" width=500>
 
-*The potential for Hydrogen when the value of quantum number $l$ is zero. This is effectivly the electrostatic Columb potential. The potential for $l=0$ is continuous, going to $ -\infty $ in its limit, resulting in a spherically symetrical potential*
+*The potential for Hydrogen when the value of quantum number* $l$ *is zero. This is effectivly the electrostatic Columb potential. The potential for* $l=0$ *is continuous, going to* $ -\infty $ *in its limit, resulting in a spherically symetrical potential*
 
 </div>
 
@@ -475,11 +477,11 @@ For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an ad
 
 <img src="Images/outputcc.png" width=500>
 
-*Hydrogen potential varying $l$. We can see that when $l = 0$ the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where $l \neq 0$ the potential is discontinous, resulting in the charecteristic shapes.*
+*Hydrogen potential varying* $l$*. We can see that when* $l = 0$* the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where* $l \neq 0$ *the potential is discontinous, resulting in the charecteristic shapes.*
 
 <img src="Images/l3d.png" width=500>
 
-*3D representation of the shape of the Hydrogen orbitals as $l$ is varied. We see the sperically symetric case of $l=0$ and the bilatteral symetry where $ l \neq 0$.*
+*3D representation of the shape of the Hydrogen orbitals as* $l$ *is varied. We see the sperically symetric case of* $l=0$ *and the bilatteral symetry where* $ l \neq 0$*.*
 
 </div>
 
@@ -490,9 +492,9 @@ If we now wgain plot the wavefucntions and probability density for the hydrogen 
 
 <div align="center">
 
-<img src="Images/ls.png" width=600>
+<img src="Images/ls2.png" width=600>
 
-*$l = 0  - 5$*
+*Plot again shows the wavefunctions on the left and theprobability dewnsities on the right. This time we plot a range of l values for the hydrogen atom, we can see that as* $l$ *increases the position of the maxima moves further away from the nucleus. This is the result of the repulsive centrifugal potential that is added to the standard columb potential when* $l \neq 0$*.* We can also see that the maximum possible* $l$ *value is dependant on the value of* $n$*, and is given by* $l_{\text{max}} = n-1$*.*
 
 </div>
 
