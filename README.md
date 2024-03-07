@@ -553,6 +553,7 @@ To be updated.
 | 15 | $\frac{\sqrt{858}}{1107025920 \sqrt[4]{\pi}}$ | $e^{- \frac{x^{2}}{2}}$ | $16384 x^{14} - 745472 x^{12} + 12300288 x^{10} - 92252160 x^{8} + 322882560 x^{6} - 484323840 x^{4} + 242161920 x^{2} - 17297280$ | $\frac{\sqrt{858} \cdot \left(16384 x^{14} - 745472 x^{12} + 12300288 x^{10} - 92252160 x^{8} + 322882560 x^{6} - 484323840 x^{4} + 242161920 x^{2} - 17297280\right) e^{- \frac{x^{2}}{2}}}{1107025920 \sqrt[4]{\pi}}$ |
 |...|...|...|...|...|
 
+*Analytical wavefunctions for the Quantum Harmonic Oscillator generated. Abriged to the first 15 terms due to GitHub's column width. Full 100 terms available at [Full Reference Table](https://github.com/Adillwma/QuantumHarmonics/blob/main/QHO_Wavefunctions_Analytical_Reference_Table_Adill_Al-Ashgar.md)*
 </div>
 
 
