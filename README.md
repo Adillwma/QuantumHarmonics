@@ -178,8 +178,7 @@ The potential term can be represented by a matrix where the leading diagonal is 
 
 Then using a linear algebra solver, we can solve for the eigenvalues and eigenvectors of $H$ to find the energy levels $E_n$ and wavefunctions $\psi$ of the quantum harmonic oscillator respectively. For performance reasons we currently use the scipy.linalg.eigh_tridiagonal function, benefiting from its tailored functionality for diagonal and tridiagonal matrices. This is discussed further in [Appendix Section 2.2](#Appendix_performance).
 
-##### NOTE:
-It is important to use a small $(\approx 0.1 a_o)$ step size for $\Delta x$. Additionally the x range (from which follows the range for the potential) must cover sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
+##### *NOTE: It is important to use a small* $(\approx 0.1 a_o)$ *step size for* $\Delta x$*. Additionally the x range (from which follows the range for the potential) must cover sufficient range that the largest desired wavefunction falls to zero at the extremities in order to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).*
 
 
 ### Energy Levels
@@ -341,10 +340,9 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 
 </div>
 
-We can now use the same method as outlined in section 1 to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
+We can now use the same method as outlined in [Part 1](#Part-1---The-Quantum-Harmonic-Oscillator) to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
 
-#### NOTE:
-We must use a range of $r$ such that the wavefunction become negligible, and a large number of $r$ points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
+##### *NOTE: We must use a range of $r$ such that the wavefunction become negligible, and a large number of $r$ points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).*
 
 
 ### Energy Levels
