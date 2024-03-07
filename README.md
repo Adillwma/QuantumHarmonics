@@ -4,11 +4,10 @@
 ### Author: Adill Al-Ashgar
 #### Solving the Time-Independant Schrödinger Equation numerically to find the stationary wavefunctions and allowed energy states of a quantum system. 
 
-<img src="Images/QuantumHarmonics_Logo2.gif" width="1000"> 
+<img src="Images/QuantumHarmonics_Logo2.gif" width="800"> 
 
 [![Github Repo](https://img.shields.io/badge/GitHub_Repo-QuantumHarmonics-yellow.svg)](https://github.com/Adillwma/QuantumHarmonics)
 [![Language](https://img.shields.io/badge/language-Python_3+-blue.svg)](https://www.python.org/) 
-[![Published](https://img.shields.io/badge/Published-2024-purple.svg)]()
 
 </div>
 
@@ -19,10 +18,10 @@
   - [Simulation](#Simulation)
   - [Combined Visulisation for QHO](#Combined-Visulisation-for-QHO)
 - [Part 2 - The Hydrogen Atom](#Part-2---The-Hydrogen-Atom)
-  - [Simulation](#Simulation-1)
   - [Analytical Solution](#Analytical-Solution-1)
+  - [Simulation](#Simulation-1)
   - [Combined Visulisation for Hydrogen Atom](#Combined-Visulisation-for-Hydrogen-Atom)
-- [Part 3 - The Hydrogen Atom with $l \neq 0$](#Part-3---The-Hydrogen-Atom-with-$l-\neq-0$)
+- [Part 3 - The Hydrogen Atom with $l\neq 0$](#Part-3---The-Hydrogen-Atom-with-$l-\neq-0$)
   - [Simulation](#Simulation-2)
   - [Combined Visulisations](#Combined-Visulisation-for-Hydrogen-Atom-at-$l-\neq-0$)
 - [References](#References)
@@ -136,13 +135,14 @@ Where:
 - $m$ is the mass of the oscillator.
 - $V$ is the potential energy.
 
-For the quantum harmonic oscillator, the potential is :
+For the quantum harmonic oscillator, the potential $V$ is,
 
 $$
 V(x) = \frac{1}{2}m \omega^2 x^2   \tag{6}
 $$
 
-where $\omega$ is the angular frequency of the oscillator.
+where $\omega$ is the angular frequency of the oscillator. We can see that it is a quadritic potential, following the form of the classical harmonic oscillator, with $k$ the spring constant being equal to $m \omega^2$.
+
 
 
 <div align="center">
@@ -195,8 +195,8 @@ Looking back on our table of analytical values for the energy levels, and fillin
 
 <div align="center">
 
-| n   | Analytical Result         | in terms of $\frac{1}{2}ℏ𝜔$ | Simulation Result | Simulation Error |
-|-----|----------------|-------------------|-------------------|------|
+| n   | Analytical Result| in terms of $\frac{1}{2}ℏ𝜔$ | Simulation Result | Simulation Error |
+|-----|------------------|-------------------|-------------------|----|
 | 1   | $\frac{1}{2}ℏ𝜔$  | 1                 | 1.00              |0.00|
 | 2   | $1\frac{1}{2}ℏ𝜔$ | 3                 | 3.00              |0.00|
 | 3   | $2\frac{1}{2}ℏ𝜔$ | 5                 | 4.99              |0.01|
@@ -204,9 +204,9 @@ Looking back on our table of analytical values for the energy levels, and fillin
 | 5   | $4\frac{1}{2}ℏ𝜔$ | 9                 | 8.97              |0.03|
 | 6   | $5\frac{1}{2}ℏ𝜔$ | 11                | 10.96             |0.04|
 | 7   | $6\frac{1}{2}ℏ𝜔$ | 13                | 12.95             |0.05|
-| ... | ...            | ...               | ...               |...|
+| ... | ...              | ...               | ...               |... |
 
-*Caption*
+*Comparison between analytical and simulated results for the first seven energy levels for the QHO*
 
 </div>
 
@@ -240,7 +240,7 @@ Now we have verified our simulation works as expected, we can move on to visulis
 
 <div align="center">
 
-<img src="Images/output21.png" width=1000>
+<img src="Images/output21.png" width=800>
 
 *Caption*
 
@@ -268,10 +268,6 @@ the probability density, which is given by $\psi^2$, and indicates the probabili
 # Part 2 - The Hydrogen Atom
 Having verified our method, we can use it to find the eigenvalues of a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yeild the energy levels and wavefunctions of the hydrogen atom, which we shall again compare to analytical results.
 
-
-## Simulation
-
-### Methodology
 In addition to having to change the potential, we will also change to a spherical coordinate system to simplify our calculations as the hydrogen atom is spherically symmetric. In such a spherically symmetric system, the wavefunction can be written :
 
 $$
@@ -291,7 +287,44 @@ $$
 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}  \tag{13}
 $$
 
-and the potential for the hydrogen atom can be written :
+
+## Analytical Solution
+
+</div>
+
+### Energy Levels
+
+Given the units we have selcted to work in for convieience, the analytically derived energy levels of the hydrogen atom are given by the formula,
+
+$$
+E_n = -\frac{1}{n^2}
+$$
+
+
+
+<div align="center">
+
+| n   | Analytical Result | in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$
+|-----|-----------------------------------------------------------------|----------|
+| 1   | $-1 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$             | -1.0000  | 
+| 2   | $-\frac{1}{4} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$   | -0.2500  |
+| 3   | $-\frac{1}{9} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$   | -0.1111  | 
+| 4   | $-\frac{1}{16} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0625  |
+| 5   | $-\frac{1}{25} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0400  | 
+| 6   | $-\frac{1}{36} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0278  | 
+| 7   | $-\frac{1}{49} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204  | 
+| ... | ...                                                             | ...      | 
+
+</div>
+
+
+
+
+## Simulation
+
+### Methodology
+
+Given our choice of units the potential for the hydrogen atom can be written :
 
 $$
 V(r_i) = \frac{-2}{r_i} + \frac{l(l+1)}{r_i^2} \tag{14}
@@ -309,16 +342,7 @@ Iniitally we will focus only on this case where $ l = 0 $, and then later we wil
 
 </div>
 
-
-
-
-
 We can now use the same method as outlined in section 1 to create the kinetic energy term matrix $D$ and add it to the potential $V$, to find the Hamiltonian matrix $H$. We agin use our linear algebra solver to find the eigenvalues and eigenvectors of $H$, and compare the results to the expected eigenvalues and wavefunctions, this time for the Hydrogen atom.
-
-!!!! to generate the Hamiltonian matrix for the Hydrogren atom, and find at least the first 5 eigenvalues for at least l=0. Compare these eigenvalues with the expected eigenvalues.
-!!!!
-
-
 
 #### NOTE:
 We must use a range of $r$ such that the wavefunction become negligible, and a large number of $r$ points, at least 1000, to ensure the numerical solutions stability as demonstrated in [Appendix Section 2.1](#Appendix_stability).
@@ -326,43 +350,21 @@ We must use a range of $r$ such that the wavefunction become negligible, and a l
 
 ### Energy Levels
 
-### Wavefunctions
-
-
-
-<div align="center">
-
-<img src="Images/outpuit.png" width=600>
-
-*The left hand plots show the first 9 simulated wavefucntions, $\psi$, for the hydrogen atom with $l = 0$, to the right hand side are the corresponding probability densities, $\psi^2$. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
-
-</div>
-
-
-
-
-
-## Analytical Solution
-
-</div>
-
-### Eigenvalues (Energy Levels)
-
 
 <div align="center">
 
 | n   | Analytical Result | in terms of $\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$ | Simulation Result ($\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$) | Simulation Error ($\frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$) |
 |-----|------------------|-------------------------------|-------------------|------|
-| 0   | $-1 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -1.0000                      | -1.0433           |-0.0433|
-| 1   | $-\frac{1}{4} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.2500                      | -0.2553           |-0.0053|
-| 2   | $-\frac{1}{9} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.1111                      | -0.1127           |-0.0017|
-| 3   | $-\frac{1}{16} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0625                      | -0.0632           |-0.0007|
-| 4   | $-\frac{1}{25} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0400                      | -0.0403           |-0.0003|
-| 5   | $-\frac{1}{36} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0278                      | -0.0280           |-0.0002|
-| 6   | $-\frac{1}{49} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204                      | -0.0205           |-0.0001|
+| 1   | $-1 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -1.0000                      | -1.0433           |-0.0433|
+| 2   | $-\frac{1}{4} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.2500                      | -0.2553           |-0.0053|
+| 3   | $-\frac{1}{9} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.1111                      | -0.1127           |-0.0017|
+| 4   | $-\frac{1}{16} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0625                      | -0.0632           |-0.0007|
+| 5   | $-\frac{1}{25} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0400                      | -0.0403           |-0.0003|
+| 6   | $-\frac{1}{36} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0278                      | -0.0280           |-0.0002|
+| 7   | $-\frac{1}{49} \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}$  | -0.0204                      | -0.0205           |-0.0001|
 | ... | ...            | ...               | ...               |...|
 
-*Caption*
+*Comparison between analytical and simulated results for the first seven energy levels for the Hydrogen electron*
 
 </div>
 
@@ -394,7 +396,7 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 | 7   | -0.2768                      | -0.2796           | -0.0007|
 | ... | ...                          | ...               |...|
 
-*Caption*
+*Comparison between analytical and simulated results for the first seven energy levels for the Hydrogen electron with the energy values converted to eV*
 
 </div>
 
@@ -408,12 +410,18 @@ Which we know is the energy of the ground state of the hydrogen atom, and each e
 </div>
 
 
+### Wavefunctions
+
+<div align="center">
+
+<img src="Images/outpuit.png" width=600>
+
+*The left hand plots show the first 9 simulated wavefucntions, $\psi$, for the hydrogen atom with $l = 0$, to the right hand side are the corresponding probability densities, $\psi^2$. Pay attention to the y-axis scale for each graph as they are not the same. We know that the integral of the probability density over all space is equal to one, so they all have the same area beneath the curve, however this is spread over a greater region as $n$ increases causing the maximum amplitude to decrease*
+
+</div>
 
 
 
-
-
-### Eigenvectors (Wavefunctions)
 
 
 
@@ -489,33 +497,15 @@ For $l > 0$, the term $l(l+1)/r^2$ becomes non-zero. This term contributes an ad
 
 *Hydrogen potential varying $l$. We can see that when $l = 0$ the potential is the standard columb potential, but as it increases, the repulsive force due to the centrifugal term grows larger. The most interesting aspect of this is that we can see that where $l \neq 0$ the potential is discontinous, resulting in the charecteristic shapes.*
 
-</div>
-
-
-<div align="center">
-
 <img src="Images/l3d.png" width=500>
 
 *3D representation of the shape of the Hydrogen orbitals as $l$ is varied. We see the sperically symetric case of $l=0$ and the bilatteral symetry where $ l \neq 0$.*
 
 </div>
 
-
-
 Overall, for higher values of $l$, the potential energy becomes more repulsive at shorter distances compared to the $l = 0$ case, reflecting the increased centrifugal effect due to the higher angular momentum of the electron. This behavior is characteristic of the different shapes of orbitals associated with different values of $l$ in atomic systems.
 
-
-
-
-
-<div align="center">
-
-<img src="Images/l3output.png" width=600>
-
-*$l = 3$*
-
-</div>
-
+If we now wgain plot the wavefucntions and probability density for the hydrogen atom, but this time for a range of l values, we can see how the position of the maxima changes as $l$ increases.
 
 
 <div align="center">
@@ -531,15 +521,13 @@ Overall, for higher values of $l$, the potential energy becomes more repulsive a
 
 
 
-
-
-
-
 # Appendix
 
 ## Stability
+To be updated.
 
 ## Performance
+To be updated. 
 
 ## QHO Analytical Wavefunction Reference Table:
 
@@ -580,4 +568,4 @@ Contributions to this codebase are welcome! If you encounter any issues, bugs or
 [adill@neuralworkx.com](mailto:adill@neuralworkx.com).
 
 # Acknowledgements
-Prof. Sandu Popescu, FRS for many inspiring and enlightening lectures. 
+Prof. Sandu Popescu, FRS, for many inspiring and enlightening lectures. 
