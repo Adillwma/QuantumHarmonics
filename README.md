@@ -262,9 +262,9 @@ Putting together the results and visualisations generated so far, we can see the
 
 
 # Part 2 - The Hydrogen Atom
-Having verified our method, we can use it to find the eigenvalues of a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yeild the energy levels and wavefunctions of the hydrogen atom, which we shall again compare to analytical results.
+Having verified our method, we can use it to solve a slightly more complex system - the Hydrogen atom. We will use same methodology as before but change the potential to that of the hydrogen atom. The eigenvalues and eigenvectors will then yeild the energy levels and wavefunctions which we shall again compare to analytical results.
 
-In addition to having to change the potential, we will also change to a spherical coordinate system to simplify our calculations as the hydrogen atom is spherically symmetric. In such a spherically symmetric system, the wavefunction can be written :
+In addition to having to change the potential, we will also change to a spherical coordinate system to simplify our calculations. In such a spherically symmetric system, the wavefunction can be written,
 
 $$
 \frac{1}{r}\Psi(r)Y_{lm}(\theta, \phi)e^{i m\phi} \tag{11}
@@ -279,6 +279,7 @@ a_0 = \frac{4 \pi \epsilon \hbar^2}{m_e e^2}  \tag{12}
 $$
 
 then the energy will be measured in units of :
+
 $$
 \frac{m_e e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2}  \tag{13}
 $$
