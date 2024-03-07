@@ -48,7 +48,7 @@ $$
 \hat{H} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V \tag{5}
 $$
 
-where $\hbar$ is the reduced Planck constant, $m$ is the mass of the system and $V$ is the potential energy. The Hamiltonian operator is a sum of the kinetic energy operator and the potential energy operator. The kinetic energy operator is given by the second derivative of the wavefunction with respect to position, and the potential energy operator is a function of position. The eigenvalues of the Hamiltonian operator are the energy levels of the system, and the eigenvectors are the wavefunctions. The probability density of the system is given by the absolute square of the wavefunction, $|\psi|^2$.
+here $\hbar$ is the reduced Planck constant, $m$ is the mass of the system and $V$ is the potential energy. The Hamiltonian operator is a sum of the kinetic energy operator and the potential energy operator. The kinetic energy operator is given by the second derivative of the wavefunction with respect to position, and the potential energy operator is a function of position. The eigenvalues of the Hamiltonian operator are the energy levels of the system, and the eigenvectors are the wavefunctions. The probability density of the system is given by the absolute square of the wavefunction, $|\psi|^2$.
 
 
 # Part 1 - The Quantum Harmonic Oscillator 
@@ -68,7 +68,7 @@ where $\omega$ is the angular frequency of the oscillator. We can see that it is
 
 <img src="Images/QHOpotential.png" width=400>
 
-*The potential $V$ for the Quantum Harmonic Oscillator shown as a function of $x$, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to $ +\infty $ in its limits.*
+*The potential* $V$ *for the Quantum Harmonic Oscillator shown as a function of* $x$*, we can see that it is parabolic, which is the defining feature of the QHO. The potential is continuous and goes to* $+\infty$ *in its limits.*
 
 </div>
 
